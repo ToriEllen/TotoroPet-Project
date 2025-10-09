@@ -46,9 +46,9 @@ header{
 }
 
 .section-main{
-    padding: 50px 150px;
+    padding: 50px 150px 20px 150px;
     text-align: justify;
-    font-size: 20px;
+    font-size: 18px;
     color: var(--color11);
     margin-bottom: 40px;
 }
@@ -69,7 +69,7 @@ header{
 }
 
 main{
-    background: linear-gradient(to bottom, rgb(255, 255, 255) 75%,var(--color5) 85%,var(--color10) 100%);
+    background: linear-gradient(to bottom, rgb(255, 255, 255) 60%,var(--color5) 85%,var(--color10) 100%);
     background-size: cover;
     background-repeat: no-repeat;
     padding: 0px;
@@ -80,13 +80,15 @@ main{
 }
 
 footer{
+    position: relative;
+    width: 100%;
     background-color: var(--color10);
-    height: 200px;
+    height: 250px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
     color: white;
     font-size: 20px;
+    
 }
 
 
@@ -119,6 +121,12 @@ footer{
     height: 100%;
     object-fit: contain;
     
+    
+}
+
+.slide first img{
+     box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.5);
+    
 }
 
 .manual-navigation{
@@ -143,7 +151,7 @@ footer{
 }
 
 .manual-btn:hover{
-    background-color: #fff;
+    background-color:var(--color7);
 }
 
 #radio1:checked ~ .first{
@@ -163,7 +171,7 @@ footer{
 }
 
 .navigation-auto div{
-    border: 2px solid #20a6ff;
+    border: 2px solid #ffffff;
     padding: 5px;
     border-radius: 10px;
     cursor: pointer;
@@ -200,14 +208,14 @@ footer{
 
 
 .Logo-principal{
-    height: 250px;
+    height: 230px;
 }
 
 .section-sobre{
 
     padding: 50px 80px;
     text-align: justify;
-    font-size: 20px;
+    font-size: 18px;
     color: var(--color11);
     margin-bottom: 20px;
     background-color: #ffffff;
@@ -229,8 +237,8 @@ footer{
 
 .section-img{
   position: relative;
-    width: 280px;
-    height: 280px;
+    width: 240px;
+    height: 240px;
     overflow: hidden;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -256,7 +264,7 @@ footer{
     justify-content: center;
     transition: bottom 0.4s;
     border-radius: 15px;
-    font-size: 18px;
+    font-size: 15px;
     color: var(--color11);
     text-align: center;
     padding: 20px;
@@ -268,6 +276,111 @@ footer{
 }
 
 .section-depoimentos{
-    height: 200px;
-  
+    background-color: white;
+    padding: 20px 50px;
+    text-align: center;  
+    box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.1);
+    margin: 0px 70px;
+    border-radius: 25px;
 }
+
+#title-dep{
+    color: var(--color8);
+    margin-bottom: 32px;
+    text-align: center;
+   
+}
+
+.depoimento-text {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    justify-content: center;
+    align-items: start;
+    text-align: left;
+}
+
+.depoimentos{
+    display: flex;
+    font-size: 13px;
+    gap: 16px;
+}
+
+.depoimentos p{
+    margin-top: 10px;
+}
+.perfil{
+    height: 70px;
+}
+
+.btn-depoimentos{
+    height: 70px;
+    width: 290px;
+    background-color: var(--color7);
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 20px 0px 15px 100px;
+}
+
+.container-footer{
+    background-color: var(--color10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    gap: 50px;
+}   
+
+.social-media{
+    transition: transform 0.3s;
+    margin: 10px;
+    display: inline-block;
+   
+}
+
+.social-media:hover{
+    transform: scale(1.3);
+    
+}
+
+.Social-Media{
+    margin: 0px 170px;
+    width: 200px;
+    font-size: 12px;
+}
+
+.contact-info{
+    margin: 0px 80px;
+    width: 200px;
+    font-size: 12px;
+}
+
+.contact-info p{
+    margin: 8px 0px;
+    padding: 10px;
+    transition: transform 0.3s;
+    margin: 10px;
+    display: inline-block;
+   
+}
+.contact-info p:hover{
+    transform: scale(1.3);
+    
+}
+
+.copyright{
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    
+}
+
