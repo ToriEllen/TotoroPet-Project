@@ -14,6 +14,7 @@
 
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap');
 
@@ -29,6 +30,16 @@
     text-decoration: none;
     list-style: none;
 
+}
+
+[data-animate] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+[data-animate].visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 [href]{
@@ -51,6 +62,8 @@ header{
     font-size: 18px;
     color: var(--color11);
     margin-bottom: 40px;
+    font-family: "Nunito Sans", sans-serif;
+
 }
 
 .navbar{
@@ -68,6 +81,44 @@ header{
 
 }
 
+.menu-hover{
+    padding: 8px ;
+    transition: background-color 0.3s, color 0.3s;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.menu-hover a {
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.menu-hover:hover,
+.menu-hover:active {
+    background-color: #fff;
+}
+
+.menu-hover:hover a,
+.menu-hover:active a {
+    color: var(--color4);
+}
+
+.menu-hover:hover i,
+.menu-hover:active i {
+    color: var(--color4);
+}
+
+.menu-hover.active:active {
+    background-color: #fff;
+}
+
+.menu-hover.active:active a,
+.menu-hover.active:active i {
+    color: var(--color4);
+}/*ajeitar isso aqui, active nao ta funcionando*/
+
+
 main{
     background: linear-gradient(to bottom, rgb(255, 255, 255) 60%,var(--color5) 85%,var(--color10) 100%);
     background-size: cover;
@@ -75,8 +126,13 @@ main{
     padding: 0px;
     display: block;
     align-items: center;
-    
-    /*height: 800px;*/
+ font-family: "Nunito Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100,
+    "YTLC" 500;
 }
 
 footer{
@@ -90,6 +146,8 @@ footer{
     font-size: 20px;
     
 }
+
+
 
 
 .slider{
@@ -222,7 +280,7 @@ footer{
     border-radius: 25px;
     box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.5);
     margin: 20px 90px;
-  
+    font-family: "Nunito Sans", sans-serif;
 
 }
 
@@ -282,6 +340,7 @@ footer{
     box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.1);
     margin: 0px 70px;
     border-radius: 25px;
+    font-family: "Nunito Sans", sans-serif;
 }
 
 #title-dep{
@@ -304,6 +363,7 @@ footer{
     display: flex;
     font-size: 13px;
     gap: 16px;
+    color: #424242;
 }
 
 .depoimentos p{
@@ -324,7 +384,16 @@ footer{
     cursor: pointer;
     font-size: 20px;
     margin: 20px 0px 15px 100px;
+    transition: background-color 1s, transform 1s;
 }
+
+.btn-depoimentos:hover {
+  background-color: #6A3FE0;
+  transform: scale(1.1);
+ 
+}
+
+
 
 .container-footer{
     background-color: var(--color10);
