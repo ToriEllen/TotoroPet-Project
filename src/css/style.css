@@ -2,7 +2,7 @@
 
 --color1: #ec9c6c ;
 --color2: #fcb48c ;
---color3: #073829 ;
+--color3: #385c16 ;
 --color4: #9c765c ;
 --color5: #c4ccac ;
 --color6: #bc9cd4 ;
@@ -23,6 +23,7 @@
   font-weight: 300;
   font-style: normal;
 }
+
 *{
     margin: 0;
     padding: 0;
@@ -37,6 +38,7 @@
   transform: translateY(20px);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
+
 [data-animate].visible {
   opacity: 1;
   transform: translateY(0);
@@ -109,12 +111,12 @@ header{
     color: var(--color4);
 }
 
-.menu-hover.active:active {
+.menu-hover.active {
     background-color: #fff;
 }
 
-.menu-hover.active:active a,
-.menu-hover.active:active i {
+.menu-hover.active a,
+.menu-hover.active i {
     color: var(--color4);
 }/*ajeitar isso aqui, active nao ta funcionando*/
 
