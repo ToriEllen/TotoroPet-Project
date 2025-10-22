@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-Vindo!</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/form.css">
+</head>
+<body>
+
+    <main id="main-form">
+        <div class="container" data-animate>
+
+             <div class="card" id="card">
+
+                <div class="face frente">
+
+                    <h2> Cadastrar</h2>
+                    <form>
+
+                       <!--<label for="nome">Nome:</label>-->
+                        <input type="text" id="nome" name="nome" placeholder="Nome">
+                    
+                        <!--<label for="email">Email:</label>-->
+                        <input type="email" id="email" name="email" placeholder="Email">
+                    
+                        <!--<label for="telefone">Telefone:</label>-->
+                        <input type="text" id="telefone" name="telefone" placeholder="Telefone">
+                        
+                        <!--<label for="senha">Senha:</label>-->
+                        <input type="password" id="senha" name="senha" placeholder="Senha">
+                        
+                        <button class="submit-button" type="submit">Cadastrar</button>
+                    </form>
+
+                        <p>Já tem conta? <span id="btnEntrar">Entrar</span></p>
+                
+                </div>
+
+                <div class="face verso">
+                    <h2>Entrar</h2>
+
+                    <form action="">
+                        <input type="email" placeholder="Email">
+                        <input type="password" placeholder="Senha">
+
+                        <button class="submit-button" type="submit">Entrar</button>
+                    </form>
+                    <p>Não tem conta? <span id="btnCadastrar">Cadastrar</span></p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="section-form">
+            <br><br><br>
+           
+            <!--<button id="button-Evento" type="submit">Já tenho uma conta</button> -->
+        </div>
+
+    </main>
+
+    
+ <br><br><br><br><br>
+
+    <footer>
+        <section class="container-footer" data-animate>
+            <div class="Social-Media">
+                <p><a href="#" class="social-media"><i class="fa-brands fa-facebook" style="color: #ffffff;"></i>TotoroPet ONG</a></p>
+                <p ><a href="#" class="social-media"><i class="fa-brands fa-instagram" style="color: #ffffff;"></i>@ONG.TotoroPet</a></p>
+                <p ><a href="#" class="social-media"><i class="fa-brands fa-twitter" style="color: #ffffff;"></i>@PetTotoro</a></p>
+                <p ><a href="#" class="social-media"><i class="fa-brands fa-whatsapp" style="color: #ffffff;"></i> (11) 98765-4321</a></p>
+            </div>
+
+            <section class="contact-info">
+                <p><i class="fa-solid fa-phone" style="color: #ffffff;"></i> (11) 98765-4321</p>
+                <p><i class="fa-solid fa-envelope" style="color: #ffffff;"></i><a href="mailto:contato@totoropet.com.br">contato@totoropet.com.br</a></p>
+            </section>
+
+        </section>
+        <p class="copyright">&copy; 2024 Totoro Pet. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="../JavaScript/script.js" defer></script>
+    <script src="../JavaScript/formCadastro.js" defer></script>
+    
+</body>
+</html>

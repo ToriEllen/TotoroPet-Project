@@ -128,14 +128,14 @@ main{
     padding: 0px;
     display: block;
     align-items: center;
- font-family: "Nunito Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100,
-    "YTLC" 500;
-}
+    font-family: "Nunito Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100,
+        "YTLC" 500;
+    }
 
 footer{
     position: relative;
@@ -177,9 +177,10 @@ footer{
 }
 
 .slide img{
-    width: 100%;
+    margin-left: 80px;
     height: 100%;
     object-fit: contain;
+    border-radius: 50%;
     
     
 }
