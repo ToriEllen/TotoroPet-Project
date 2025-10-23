@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/Icon/favicon.ico" type="image/x-icon">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Bem-Vindo!</title>
 
     <link rel="stylesheet" href="../css/style.css">
@@ -10,6 +12,15 @@
 </head>
 <body>
 
+    <nav class="navbar" data-animate>
+        <span class="menu-hover"><a href="../../Home.html"><i class="fa-solid fa-house"></i>Home</a></span>
+        <span class="menu-hover"><a href="/src/pages/Adotar.html"><i class="fa-solid fa-paw" ></i>Adotar</a></span>
+        <span class="menu-hover"><a href="/src/pages/Doar.html"><i class="fa-solid fa-hand-holding-heart" ></i>Doar</a></span>
+        <span class="menu-hover"><a href="/src/pages/Apoio.html"><i class="fa-solid fa-location-dot" ></i>Pontos de Apoio</a></span>
+        <span class="menu-hover"><a href="/src/pages/Perdido.html"><i class="fa-solid fa-magnifying-glass" ></i>Pet perdido</a></span>
+
+    </nav>
+    
     <main id="main-form">
         <div class="container" data-animate>
 
@@ -20,19 +31,23 @@
                     <h2> Cadastrar</h2>
                     <form>
 
-                       <!--<label for="nome">Nome:</label>-->
+                      
                         <input type="text" id="nome" name="nome" placeholder="Nome">
-                    
-                        <!--<label for="email">Email:</label>-->
+                        <small class="error-msg"></small>
+                        
                         <input type="email" id="email" name="email" placeholder="Email">
-                    
-                        <!--<label for="telefone">Telefone:</label>-->
+                        <small class="error-msg"></small>
+                        
                         <input type="text" id="telefone" name="telefone" placeholder="Telefone">
+                        <small class="error-msg"></small>
                         
-                        <!--<label for="senha">Senha:</label>-->
+                        <div class="senha-container">
                         <input type="password" id="senha" name="senha" placeholder="Senha">
-                        
-                        <button class="submit-button" type="submit">Cadastrar</button>
+                        <i class="fa-solid fa-eye" id="toggleSenha"></i>
+                        </div>
+                        <small class="error-msg"></small>
+
+                        <button class="submit-button" id="btnCadastro" type="submit">Cadastrar</button>
                     </form>
 
                         <p>Já tem conta? <span id="btnEntrar">Entrar</span></p>
@@ -43,27 +58,34 @@
                     <h2>Entrar</h2>
 
                     <form action="">
-                        <input type="email" placeholder="Email">
-                        <input type="password" placeholder="Senha">
+                        <input type="email" name="Email" placeholder="Email">
+                        <small class="error-msg"></small>
 
-                        <button class="submit-button" type="submit">Entrar</button>
+                        <div class="senha-container">
+                        <input type="password" id="senha" name="senha" placeholder="Senha">
+                        <i class="fa-solid fa-eye" id="toggleSenha"></i>
+                        </div>
+                        <small class="error-msg"></small>
+
+                        <button class="submit-button" id="btnLogin" type="submit">Entrar</button>
                     </form>
                     <p>Não tem conta? <span id="btnCadastrar">Cadastrar</span></p>
                 </div>
 
             </div>
+
+            <img class="animation-img" src="../images/Animation1.png" alt="Animação">
         </div>
 
-        <div class="section-form">
-            <br><br><br>
+       <!---- <div class="section-form">
            
-            <!--<button id="button-Evento" type="submit">Já tenho uma conta</button> -->
-        </div>
+           
+            <button id="button-Evento" type="submit">Já tenho uma conta</button>
+        </div> -->
 
     </main>
 
     
- <br><br><br><br><br>
 
     <footer>
         <section class="container-footer" data-animate>

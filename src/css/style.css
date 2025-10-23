@@ -2,7 +2,7 @@
 
 --color1: #ec9c6c ;
 --color2: #fcb48c ;
---color3: #385c16 ;
+--color3: #184e1da6 ;
 --color4: #9c765c ;
 --color5: #c4ccac ;
 --color6: #bc9cd4 ;
@@ -56,6 +56,25 @@ header{
     padding: 0 180px;
     color: white;
     font-size: 50px;
+}
+.Login-header{
+    background-color: var(--color3);
+    border-bottom-left-radius: 10px;
+    box-shadow: 3px 4px 15px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    height: 35px;
+    width: 200px;
+    top: 0px;
+    left: 85.1%;
+    font-size: 16px;
+    text-align: center;
+    font-family: "Shadows Into Light Two", cursive;
+}
+
+#login-Access{
+    margin: 4px ;
+    
+   /* color:black!important;*/
 }
 
 .section-main{

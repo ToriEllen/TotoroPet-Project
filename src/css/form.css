@@ -1,4 +1,6 @@
-
+main{
+  padding-bottom: 80px;
+}
 #form-acesso {
     display: flex;
     margin-top: 30px;
@@ -8,6 +10,8 @@
 }
 
 #main-form {
+    height: auto;
+    margin-top: 60px;
     display: flex;
     flex-direction: column;
     gap: 50px;
@@ -67,10 +71,7 @@ margin: 8px;
     transform: scale(1.05);
 }
 
-.section-form{/*teste de espaçamento*/
-    display: flex;
-    height: 400px;
-}
+
 
 /*#button-Evento {
     background-color: var(--color8);
@@ -94,12 +95,18 @@ margin: 8px;
 }*/
 .container {
   perspective: 1000px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 150px;
+  flex-wrap: wrap;
 }
 
 .card {
-    margin-top: 20px;
+  margin-top: 20px;
+  margin-left: 380px;
   width: 325px;
-  height: 375px;
+  height: 395px;
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.8s ease;
@@ -149,9 +156,35 @@ margin: 8px;
 input:focus,
 input:focus-visible {
   outline: none; 
-  border-color: var(--color7); 
+  border: solid 2px var(--color9);
+ 
   box-shadow: 0 0 0 4px rgba(93,52,124,0.12); 
   color: #313030; 
+}
+
+.senha-container {
+  position: relative;
+
+}
+
+.senha-container input {
+ 
+ /* padding-right: 5px;  espaço para o ícone */
+}
+
+#toggleSenha {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #888;
+  font-size: 15px;
+  transition: color 0.3s;
+}
+
+#toggleSenha:hover {
+  color: var(--color7);
 }
 
 .face button {
@@ -159,14 +192,17 @@ input:focus-visible {
   padding: 8px;
   border: none;
   border-radius: 5px;
-  background: #8e44ad;
+  background: var(--color8);
   color: white;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: 1s;
+  
+  
 }
 
 .face button:hover {
   background: #732d91;
+  transform: scale(1.1);
 }
 
 .face p span {
@@ -181,4 +217,21 @@ input:focus-visible {
 
 .card.virar {
   transform: rotateY(180deg);
+}
+
+.error-msg {
+  color: red;
+  font-size: 11px;
+  left: 10%;
+  position: relative;
+  display: none;
+  
+}
+
+.animation-img {
+  display: flex;
+  flex-direction: column;
+  height: 280px;
+  object-fit: contain;
+  margin-top: 200px;
 }
