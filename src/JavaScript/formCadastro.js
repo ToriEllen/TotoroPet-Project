@@ -33,7 +33,7 @@ const buttons = document.querySelectorAll('.submit-button');
 
     //validação de campos vazios e adiciona mensagem de erro e class css, se nao estiver vazio limpa a mensagem de erro
     inputs.forEach(input => {
-       const errorMsg = input.nextElementSibling;
+       const errorMsg = input.parentElement.querySelector('.error-msg');
       if (input.value.trim() === ""){
         camposVazios = true;
         input.classList.add('error');
@@ -61,15 +61,7 @@ const buttons = document.querySelectorAll('.submit-button');
 const senhaInput = document.querySelectorAll('#senha');
 const toggleSenha = document.querySelectorAll('#toggleSenha');
 
-//forEach para pegar todos os elementos com id toggleSenha e adicionar evento de click
-/*toggleSenha.forEach(toggle => {
-  toggle.addEventListener("click", () => {
-    const senhaInput = toggle.previousElementSibling;
-    const tipo = senhaInput.getAttribute("type") === "password" ? "text" : "password";
-    senhaInput.setAttribute("type", tipo);
-    toggle.classList.toggle("fa-eye-slash");
-  });
-});*/
+
 
 
 //ajeitar o time das trocas de imagens
@@ -87,23 +79,13 @@ function trocarImagem(index) {
     img.src = animacoes[index];
     img.style.transition = '1s ease-in-out';
   });
-}
+};
  
 
 trocarImagem(0);
 
 const senhaInputs = document.querySelectorAll('#senha');
 const toggleSenhas = document.querySelectorAll('#toggleSenha');
-
-senhaInputs.forEach(input => {
-  input.addEventListener("click", () => {
-    trocarImagem(1); 
-  });
-
-   input.addEventListener('mouseout', () => {
-    trocarImagem(0);
-  });
-});
 
 toggleSenhas.forEach(toggle => {
   toggle.addEventListener("click", () => {
@@ -112,8 +94,37 @@ toggleSenhas.forEach(toggle => {
     senhaInput.setAttribute('type', tipo);
     toggle.classList.toggle("fa-eye-slash");
 
-    trocarImagem(2);
+      if(tipo === "text"){
+        trocarImagem(2);
+      } else {
+        trocarImagem(1);
+      }
+
+    /*trocarImagem(2);*/
   });
 });
 
+
+  senhaInputs.forEach(input => {
+    input.addEventListener("input", () => {
+      trocarImagem(1); 
+    });
+
+    input.addEventListener("input", () => {
+      if (input.value.trim() === '') {
+        trocarImagem(0);
+    }else{
+      trocarImagem(1);
+    }
+  });
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        trocarImagem(0);
+      });
+  });
+  
+
+
+});
 

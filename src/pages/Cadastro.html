@@ -31,22 +31,27 @@
                     <h2> Cadastrar</h2>
                     <form>
 
-                      
+                    <div class="input-container">
                         <input type="text" id="nome" name="nome" placeholder="Nome">
                         <small class="error-msg"></small>
-                        
+                    </div>
+
+                    <div class="input-container">
                         <input type="email" id="email" name="email" placeholder="Email">
                         <small class="error-msg"></small>
-                        
+                    </div>
+
+                    <div class="input-container">
                         <input type="text" id="telefone" name="telefone" placeholder="Telefone">
                         <small class="error-msg"></small>
+                    </div>
                         
-                        <div class="senha-container">
+                    <div class="senha-container">
                         <input type="password" id="senha" name="senha" placeholder="Senha">
                         <i class="fa-solid fa-eye" id="toggleSenha"></i>
-                        </div>
                         <small class="error-msg"></small>
-
+                    </div>
+                       
                         <button class="submit-button" id="btnCadastro" type="submit">Cadastrar</button>
                     </form>
 
@@ -58,14 +63,18 @@
                     <h2>Entrar</h2>
 
                     <form action="">
+
+                    <div class="input-container">
                         <input type="email" name="Email" placeholder="Email">
                         <small class="error-msg"></small>
+                    </div>
 
-                        <div class="senha-container">
+                    <div class="senha-container">
                         <input type="password" id="senha" name="senha" placeholder="Senha">
                         <i class="fa-solid fa-eye" id="toggleSenha"></i>
-                        </div>
                         <small class="error-msg"></small>
+                    </div>
+                        
 
                         <button class="submit-button" id="btnLogin" type="submit">Entrar</button>
                     </form>
