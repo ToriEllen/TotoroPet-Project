@@ -1,6 +1,7 @@
 main{
   padding-bottom: 80px;
 }
+
 #form-acesso {
     display: flex;
     margin-top: 30px;
@@ -14,42 +15,16 @@ main{
     margin-top: 60px;
     display: flex;
     flex-direction: column;
-    gap: 50px;
     justify-content: center;
     align-items: center;
     transition: transform 0.3s;
 
 }
 
-/*#form-acesso{
-    color: white;
-    background-color: var(--color9);
-    border-radius: 25px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    align-items: stretch;
-}
-
-#form-acesso:hover {
-    transform: scale(1.1);
-    background-color: var(--color9);
-}
-*/
-
-/*#form-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    display: block;
-    text-align: center;
-}*/
-
 
 form{
 margin: 8px;
 }
-
-
-
 
 .submit-button {
     background-color: var(--color7);
@@ -71,28 +46,6 @@ margin: 8px;
     transform: scale(1.05);
 }
 
-
-
-/*#button-Evento {
-    background-color: var(--color8);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 18px;
-    margin: 20px ;
-    width: 230px;
-    height: 50px;
-    transition: background-color 0.3s, transform 0.3s;
-    
-}
-
-#button-Evento:hover{   
-     background-color: #25be4b;
-    transform: scale(1.05);
-
-}*/
 .container {
   perspective: 1000px; 
   display: flex;
@@ -104,7 +57,7 @@ margin: 8px;
 
 .card {
   margin-top: 20px;
-  margin-left: 380px;
+  margin:auto;
   width: 325px;
   height: 395px;
   position: relative;
@@ -127,8 +80,9 @@ margin: 8px;
   gap: 10px;
   padding: 20px;
 }
+
+
 .face p {
-    
     color: #585656;
 }
 
@@ -157,7 +111,6 @@ input:focus,
 input:focus-visible {
   outline: none; 
   border: solid 2px var(--color9);
- 
   box-shadow: 0 0 0 4px rgba(93,52,124,0.12); 
   color: #313030; 
 }
@@ -167,10 +120,6 @@ input:focus-visible {
 
 }
 
-.senha-container input {
- 
- /* padding-right: 5px;  espaço para o ícone */
-}
 
 #toggleSenha {
   position: absolute;
@@ -196,7 +145,6 @@ input:focus-visible {
   color: white;
   cursor: pointer;
   transition: 1s;
-  
   
 }
 
