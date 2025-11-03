@@ -18,19 +18,22 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap');
 
-.Text-Logo {
-  font-family: "Shadows Into Light Two", cursive;
-  font-weight: 300;
-  font-style: normal;
-}
+
+
+
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    list-style: none;
+}
 
+.Logo-principal{
+    max-height: 90%;
+    min-height: auto;
+    min-width: 25%;
+    margin: auto;
 }
 
 [data-animate] {
@@ -53,19 +56,21 @@ header{
     height: 200px;
     display: flex;
     align-items: center;
-    padding: 0 180px;
+    padding: auto;
     color: white;
-    font-size: 50px;
+   /* font-size: 50px;*/
 }
 .Login-header{
     background-color: var(--color3);
     border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     box-shadow: 3px 4px 15px rgba(0, 0, 0, 0.5);
-    position: absolute;
+    position: fixed;
     height: 35px;
-    width: 200px;
+    max-width: 200px;
+    min-width: 100px;
     top: 0px;
-    left: 85.1%;
+    right: 0;
     font-size: 16px;
     text-align: center;
     font-family: "Shadows Into Light Two", cursive;
@@ -73,12 +78,11 @@ header{
 
 #login-Access{
     margin: 4px ;
-    
-   /* color:black!important;*/
 }
 
 .section-main{
-    padding: 50px 150px 20px 150px;
+    padding-top: 50px;
+    padding: auto;
     text-align: justify;
     font-size: 18px;
     color: var(--color11);
@@ -86,6 +90,7 @@ header{
     font-family: "Nunito Sans", sans-serif;
 
 }
+
 
 .navbar{
     position: sticky;
@@ -96,11 +101,12 @@ header{
     justify-content: space-between;
     background-color: var(--color4);
     height: 50px;
-    padding: 0 180px;
+    padding: auto;
     background-attachment: fixed;
     
 
 }
+
 
 .menu-hover{
     padding: 8px ;
@@ -108,6 +114,7 @@ header{
     background-color: transparent;
     color: #fff;
     border-radius: 10px;
+    margin: auto;
 }
 
 .menu-hover a {
@@ -149,7 +156,7 @@ main{
     align-items: center;
     font-family: "Nunito Sans", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 300;
+   /* font-weight: 300;*/
     font-style: normal;
     font-variation-settings:
         "wdth" 100,
@@ -158,23 +165,36 @@ main{
 
 footer{
     position: relative;
-    width: 100%;
+    max-width: 100%;
+    min-width: auto;
     background-color: var(--color10);
     height: 250px;
     display: flex;
-    grid-template-columns: repeat(3, 1fr);
+    /*grid-template-columns: repeat(4, 2fr);*/
     color: white;
     font-size: 20px;
+    padding:  15%;  
     
 }
+/*ajeita aqui os slides*/
+.container-slides{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 70%;
+    margin: auto;
+}
 
-
-
+#slide-menssage{
+    background-color: var(--color4);
+    max-height: 20%;
+    width: 20%;
+}
 
 .slider{
-    margin: 0 auto;
-    width: 800px;
-    height: 400px;
+    margin: auto;
+    max-width: 100%;
+    height: auto;
     overflow: hidden;
 
 }
@@ -196,10 +216,11 @@ footer{
 }
 
 .slide img{
-    margin-left: 80px;
-    height: 100%;
+    margin: auto;
+    max-height: 100%;
+    min-height: 40%;
     object-fit: contain;
-    border-radius: 50%;
+    border-radius: 30%;
     
     
 }
@@ -287,9 +308,6 @@ footer{
 }
 
 
-.Logo-principal{
-    height: 230px;
-}
 
 .section-sobre{
 
@@ -301,7 +319,8 @@ footer{
     background-color: #ffffff;
     border-radius: 25px;
     box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.5);
-    margin: 20px 90px;
+    margin: auto;
+    max-width: 87%;
     font-family: "Nunito Sans", sans-serif;
 
 }
@@ -312,21 +331,26 @@ footer{
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-    gap: 24px;
+    gap: auto;
 }
 
 .section-img{
-  position: relative;
-    width: 240px;
-    height: 240px;
+    position: relative;
+    max-width: 240px;
+    min-width: 150px;
+    /*max-height: 240px;
+    min-height: 150px;*/
     overflow: hidden;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: auto;
 }
 
 .section-img img {
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    min-width: 05%;
+    max-height: 100%;
+    min-height: 05%;
     object-fit: cover;
     border-radius: 15px;
     display: block;
@@ -344,10 +368,11 @@ footer{
     justify-content: center;
     transition: bottom 0.4s;
     border-radius: 15px;
-    font-size: 15px;
+    /*font-size: 15px;*/
+    font-size: clamp(0.6rem, 1.2vw, 1.5rem);
     color: var(--color11);
     text-align: center;
-    padding: 20px;
+    padding: 15px;
     box-sizing: border-box;
 }
 
@@ -356,13 +381,17 @@ footer{
 }
 
 .section-depoimentos{
+    display: flex;
+    flex-wrap: wrap;
     background-color: white;
-    padding: 20px 50px;
+    padding: 20px ;
     text-align: center;  
     box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.1);
-    margin: 0px 70px;
+    margin: auto;
     border-radius: 25px;
     font-family: "Nunito Sans", sans-serif;
+    max-width: 87%;
+    margin-top: 4%;
 }
 
 #title-dep{
@@ -384,8 +413,9 @@ footer{
 .depoimentos{
     display: flex;
     font-size: 13px;
-    gap: 16px;
     color: #424242;
+    max-height: 300px;
+    gap: 12px;
 }
 
 .depoimentos p{
@@ -396,8 +426,8 @@ footer{
 }
 
 .btn-depoimentos{
-    height: 70px;
-    width: 290px;
+    max-height: 50%;
+    max-width: 70%;
     background-color: var(--color7);
     color: white;
     border: none;
@@ -405,7 +435,7 @@ footer{
     border-radius: 5px;
     cursor: pointer;
     font-size: 20px;
-    margin: 20px 0px 15px 100px;
+    margin: auto;
     transition: background-color 1s, transform 1s;
 }
 
@@ -420,11 +450,8 @@ footer{
 .container-footer{
     background-color: var(--color10);
     display: flex;
-    align-items: center;
-    justify-content: center;
     color: white;
     font-size: 20px;
-    gap: 50px;
 }   
 
 .social-media{
@@ -440,13 +467,13 @@ footer{
 }
 
 .Social-Media{
-    margin: 0px 170px;
+    margin: auto;
     width: 200px;
     font-size: 12px;
 }
 
 .contact-info{
-    margin: 0px 80px;
+    margin: auto;
     width: 200px;
     font-size: 12px;
 }
@@ -475,3 +502,7 @@ footer{
     
 }
 
+/*@media screen (min-width: 400px){
+
+}
+    
