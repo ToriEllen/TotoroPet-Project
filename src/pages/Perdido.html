@@ -1,37 +1,110 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../images/Icon/favicon.ico" type="image/x-icon">
     <title>Adotar</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/petperdidostyle.css">
 
 </head>
+
 <body>
     <header>
 
-        <img class="Logo-principal" src="../images/logo-TotoroPet.png" alt="Logo Totoro Pet">
-        <h1 class="Text-Logo">Totoro Pet</h1>
+        <img class="Logo-principal" src="../images/logo--TotoroPet.png" alt="Logo Totoro Pet">
 
         <div class="Login-header">
-            <a href="Cadastro.html"><div id="login-Access">Entrar/Cadastrar</div></a>
-        </div> 
+            <a href="Cadastro.html">
+                <div id="login-Access">Entrar/Cadastrar</div>
+            </a>
+        </div>
 
     </header>
 
     <nav class="navbar" data-animate>
         <span class="menu-hover"><a href="../../Home.html"><i class="fa-solid fa-house"></i>Home</a></span>
-        <span class="menu-hover "><a href="Adotar.html"><i class="fa-solid fa-paw" ></i>Adotar</a></span>
-        <span class="menu-hover"><a href="Doar.html"><i class="fa-solid fa-hand-holding-heart" ></i>Doar</a></span>
-        <span class="menu-hover"><a href="Apoio.html"><i class="fa-solid fa-location-dot" ></i>Pontos de Apoio</a></span>
-        <span class="menu-hover active"><a href="#"><i class="fa-solid fa-magnifying-glass" ></i>Pet perdido</a></span>
+        <span class="menu-hover "><a href="Adotar.html"><i class="fa-solid fa-paw"></i>Adotar</a></span>
+        <span class="menu-hover"><a href="Doar.html"><i class="fa-solid fa-hand-holding-heart"></i>Doar</a></span>
+        <span class="menu-hover"><a href="Apoio.html"><i class="fa-solid fa-location-dot"></i>Pontos de Apoio</a></span>
+        <span class="menu-hover active"><a href="#"><i class="fa-solid fa-magnifying-glass"></i>Pet perdido</a></span>
 
     </nav>
 
+    <main>
 
+        <h2>Pergunte quem viu seu pet</h2>
+        <button class="btn-form" onclick="window.location.href='petperdidoform.html'">Reportar pet perdido</button>
+
+        <!-- cards dos pets -->
+        <section id="lista-pets" class="grid-pets"></section>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const listaPets = document.getElementById("lista-pets");
+
+
+                let petsSalvos = JSON.parse(localStorage.getItem("petsCadastrados")) || [];
+
+                if (petsSalvos.length === 0) {
+                    listaPets.innerHTML = "<p style='grid-column: 1 / -1; text-align: center; color: #666; font-size: 1.1rem;'>Nenhum pet perdido foi reportado ainda.</p>";
+                    return;
+                }
+
+                // isso é para deixar em ordem
+                petsSalvos.sort((a, b) => new Date(b.data) - new Date(a.data));
+
+                // isso é para criar os cards dos pets
+                petsSalvos.forEach(pet => {
+                    const card = document.createElement("div");
+                    card.className = "card-pet";
+
+                    card.innerHTML = `
+                    <img src="${pet.fotoBase64}" alt="Foto de ${pet.nome}">
+                    <div class="card-info">
+                        <h3>${pet.nome}</h3>
+                        <p><strong>Tipo:</strong> ${pet.tipo}</p>
+                        <p><strong>Visto por último:</strong> ${pet.local}</p>
+                        <p><strong>Contato:</strong> <span class="contato-destaque">${pet.contato}</span></p>
+                        ${pet.obs ? <p><strong>Observações:</strong> ${pet.obs}</p> : ''}
+                        <p class="data">Reportado em: ${pet.data}</p>
+                    </div>
+                `;
+
+                    listaPets.appendChild(card);
+                });
+            });
+        </script>
+    </main>
+    <footer>
+        <section class="container-footer" data-animate>
+            <div class="Social-Media">
+                <p><a href="#" class="social-media"><i class="fa-brands fa-facebook"
+                            style="color: #ffffff;"></i>TotoroPet ONG</a></p>
+                <p><a href="#" class="social-media"><i class="fa-brands fa-instagram"
+                            style="color: #ffffff;"></i>@ONG.TotoroPet</a></p>
+                <p><a href="#" class="social-media"><i class="fa-brands fa-twitter"
+                            style="color: #ffffff;"></i>@PetTotoro</a></p>
+                <p><a href="#" class="social-media"><i class="fa-brands fa-whatsapp" style="color: #ffffff;"></i> (11)
+                        98765-4321</a></p>
+            </div>
+
+            <section class="contact-info">
+                <p><i class="fa-solid fa-phone" style="color: #ffffff;"></i> (11) 98765-4321</p>
+                <p><i class="fa-solid fa-envelope" style="color: #ffffff;"></i><a
+                        href="mailto:contato@totoropet.com.br">contato@totoropet.com.br</a></p>
+            </section>
+
+        </section>
+        <p class="copyright">&copy; 2024 Totoro Pet. Todos os direitos reservados.</p>
+    </footer>
     <script src="../JavaScript/script.js" defer></script>
 </body>
+
 </html>

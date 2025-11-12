@@ -11,7 +11,6 @@
 --color9: #c4a6d2 ;
 --color10: #929b76 ;
 --color11: #694730 ;
-
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap');
@@ -501,8 +500,65 @@ footer{
     font-size: 15px;
     
 }
-
-/*@media screen (min-width: 400px){
-
+.navbar-mobile{
+    display: none;
 }
-    
+
+@media screen and (max-width: 400px){
+    .navbar{
+        display: none;
+    }
+    .navbar-mobile{
+       /* position: sticky;*/
+        flex-direction: column;
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: var(--color4);
+        height: 12rem;
+        padding: auto;
+        background-attachment: fixed;
+
+            .menu-hover{
+                padding: 8px ;
+                transition: background-color 0.3s, color 0.3s;
+                background-color: transparent;
+                color: #fff;
+                border-radius: 10px;
+                margin: auto;
+                width: 80%;
+                text-align: center;
+    }
+
+.menu-hover a {
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.menu-hover:hover,
+.menu-hover:active {
+    background-color: #fff;
+}
+
+.menu-hover:hover a,
+.menu-hover:active a {
+    color: var(--color4);
+}
+
+.menu-hover:hover i,
+.menu-hover:active i {
+    color: var(--color4);
+}
+
+.menu-hover.active {
+    background-color: #fff;
+}
+
+.menu-hover.active a,
+.menu-hover.active i {
+    color: var(--color4);
+}
+
+}}

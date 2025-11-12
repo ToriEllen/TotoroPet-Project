@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Perdido</title>
+    <link rel="stylesheet" href="../css/petperdidoform.css">
+    <script src="petperdidoform.js" defer></script>
+
+</head>
+<body>
+
+<main>
+    <h2>Cadastre o seu pet</h2>
+
+    <form id="form-pet">
+        <label for="nomeBichinho">Nome do pet:</label>
+        <input type="text" id="nomeBichinho" placeholder="Ex: Duke"><br><br>
+
+        <label for="tipoBichinho">Descrição do pet:</label>
+        <input type="text" id="tipoBichinho" placeholder="Ex: Cachorro, Pastor-alemão"><br><br>
+
+        <label for="localBichinho">Local onde foi visto:</label>
+        <input type="text" id="localBichinho" placeholder="Ex: Rua das Flores, 123"><br><br>
+
+        <label for="contatoBichinho">Seu número (WhatsApp):</label>
+        <input type="tel" id="contatoBichinho" placeholder="Ex: (85) 12345-6789"><br><br>
+
+        <label for="obsBichinho">Observações:</label><br>
+        <textarea id="obsBichinho" placeholder="Ex: Estava sem coleira..."></textarea><br><br>
+
+        <label for="seupet">Foto do pet:</label>
+        <input type="file" id="seupet" accept="image/jpeg, image/png"><br><br>
+
+        <div id="preview"></div><br>
+
+        <button type="submit">Enviar</button>
+
+
+    </form>
+</main>
+
+</body>
+</html>

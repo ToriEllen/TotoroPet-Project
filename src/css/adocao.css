@@ -6,7 +6,7 @@
     --colorFour: #7eb77f;
     --colorFive:rgb(65, 30, 2);
 }
-
+@import url(style.css);
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 .adocao{
@@ -21,7 +21,7 @@
 
 #adocao-body{
     display: grid;/*colocar em formato de grade*/
-    grid-template-columns: repeat(4, 1fr); 
+    grid-template-columns: repeat(auto-fit,minmax(250px, 1fr)); 
     gap: 0.938rem; /*descolar um post do outro*/
     padding: 5%;
     justify-items:center; /* colocar tudo central*/
@@ -32,9 +32,10 @@
     border-radius: 15px;/*bordinhas redondas*/
     box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
     padding: 1%;
-    width: 95%; /* largura fixa para quadrados */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
+    /*transform: translateY(-120vh);
+    transition: transform 1s ease-out, opacity 0.5s;*/
 }
 .pet-adocao:hover{
     transform: scale(1.03);
@@ -47,7 +48,6 @@
     object-fit: cover;
     display: block;
     margin: 0 auto;
-    aspect-ratio: 1/1;
     padding-top: 0.10rem;
 
 }
@@ -70,10 +70,13 @@ button{
     border-radius: 8px;
     color: white;
     cursor: pointer;
-    transition: 0.2s;
+    transition: 0.3s;
     display: block;
     margin: auto;
-    justify-content: flex-end;
+
+    button bnt-ad{
+        display: inline-block;     
+    }
 }
 button:hover {
   background-color: #19581b;
@@ -88,18 +91,42 @@ button:hover {
 
 }
 
-.paginacao-pet {
+/*.paginacao-pet {
     padding-bottom: 20px;
     cursor: pointer;
     align-items: center;
     justify-content: center;
     font-size: 0.5rem;
+}*/
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12px;
+    gap: 10px;
 }
 
-/*@media screen and (max-width: 768px){
-    .adocao{
-        width:100%;
-        flex-direction: column;
-    }
-    
-}*/
+.pagination div {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    margin: 0.2rem;
+}
+
+.pagination div:not(.numbers), /*os itens que não são os números*/
+.pagination div.numbers div{
+    width: 40px;
+    height: 40px;
+}
+
+.pagination div.numbers div:hover, /*os que são numeros*/
+.pagination div.numbers div.active{
+    color: var(--colorOne);
+    background-color: var(--colorFour);
+}

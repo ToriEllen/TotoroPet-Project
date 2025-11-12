@@ -1,0 +1,137 @@
+main {
+   
+    text-align: center;
+    font-family: "nunito sans", sans-serif;
+    font-size: 13px;
+    color: #694730;
+
+}
+button {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 13px;
+    background-color: #929b76;
+    color: #333
+}
+
+/* Estilo dos cards dos pets */
+#lista-pets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 0px auto;
+  max-width: 1000px;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  width: 280px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.card p {
+  color: #555;
+  font-size: 0.95rem;
+  margin: 4px 0;
+}
+
+.btn-form {
+  background-color: #929b76;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-form:hover {
+  background-color: #929b76;
+}
+
+
+
+.grid-pets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 0rem;
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
+.card-pet {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-pet:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+.card-pet img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 1rem;
+}
+
+.card-info h3 {
+    margin: 0 0 0.5rem;
+    color: #333;
+}
+
+.contato-destaque {
+    color: #5d347c;
+    font-weight: bold;
+}
+
+.data {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+main {
+  flex:1;
+}
