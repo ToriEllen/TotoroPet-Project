@@ -19,8 +19,11 @@ let cont = 1
 const totalRadio = 4
 
 setInterval (() =>{
-    document.getElementById('radio' + cont).checked = true
-    cont ++
+    const radio = document.getElementById('radio' + cont)
+    
+    if(radio){
+      radio.checked = true
+     } cont ++
     if(cont > totalRadio){
         cont = 1
     }
