@@ -5,20 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../images/Icon/favicon.ico" type="image/x-icon">
-    <title>Adotar</title>
+    <title>Pet Perdido</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/petperdidostyle.css">
+    <link rel="stylesheet" href="../css/perdido.css">
 
 </head>
 
 <body>
     <header>
 
-        <img class="Logo-principal" src="../images/logo--TotoroPet.png" alt="Logo Totoro Pet">
+        <img class="Logo-principal" src="../images/Logo--TotoroPet.png" alt="Logo Totoro Pet">
 
         <div class="Login-header">
             <a href="Cadastro.html">
@@ -39,72 +39,57 @@
 
     <main>
 
-        <h2>Pergunte quem viu seu pet</h2>
-        <button class="btn-form" onclick="window.location.href='petperdidoform.html'">Reportar pet perdido</button>
+        <div class="container-perdidos">
 
-        <!-- cards dos pets -->
-        <section id="lista-pets" class="grid-pets"></section>
+            <p>Cadastre o seu pet</p>
+            <form id="form-pet">
+                <label for="nomeBichinho">Nome do pet:</label>
+                <input type="text" id="nomeBichinho" placeholder="Ex: Duke">
 
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const listaPets = document.getElementById("lista-pets");
+                <label for="tipoBichinho">Descrição do pet:</label>
+                <input type="text" id="tipoBichinho" placeholder="Ex: Cachorro, Pastor-alemão">
 
+                <label for="localBichinho">Local onde foi visto:</label>
+                <input type="text" id="localBichinho" placeholder="Ex: Rua das Flores, 123">
 
-                let petsSalvos = JSON.parse(localStorage.getItem("petsCadastrados")) || [];
+                <label for="contatoBichinho">Seu número (WhatsApp):</label>
+                <input type="tel" id="contatoBichinho" placeholder="Ex: (85) 12345-6789">
 
-                if (petsSalvos.length === 0) {
-                    listaPets.innerHTML = "<p style='grid-column: 1 / -1; text-align: center; color: #666; font-size: 1.1rem;'>Nenhum pet perdido foi reportado ainda.</p>";
-                    return;
-                }
+                <label for="obsBichinho">Observações:</label>
+                <textarea id="obsBichinho" placeholder="Ex: Estava sem coleira..."></textarea>
 
-                // isso é para deixar em ordem
-                petsSalvos.sort((a, b) => new Date(b.data) - new Date(a.data));
+                <label for="seupet">Foto do pet:</label>
+               <input type="file" id="seupet"  accept="image/jpeg, image/png">
 
-                // isso é para criar os cards dos pets
-                petsSalvos.forEach(pet => {
-                    const card = document.createElement("div");
-                    card.className = "card-pet";
+                <div id="preview"></div><br>
 
-                    card.innerHTML = `
-                    <img src="${pet.fotoBase64}" alt="Foto de ${pet.nome}">
-                    <div class="card-info">
-                        <h3>${pet.nome}</h3>
-                        <p><strong>Tipo:</strong> ${pet.tipo}</p>
-                        <p><strong>Visto por último:</strong> ${pet.local}</p>
-                        <p><strong>Contato:</strong> <span class="contato-destaque">${pet.contato}</span></p>
-                        ${pet.obs ? <p><strong>Observações:</strong> ${pet.obs}</p> : ''}
-                        <p class="data">Reportado em: ${pet.data}</p>
-                    </div>
-                `;
+                <button type="submit">Enviar</button>
 
-                    listaPets.appendChild(card);
-                });
-            });
-        </script>
+            </form>
+
+        </div>
+
     </main>
     <footer>
         <section class="container-footer" data-animate>
             <div class="Social-Media">
-                <p><a href="#" class="social-media"><i class="fa-brands fa-facebook"
-                            style="color: #ffffff;"></i>TotoroPet ONG</a></p>
-                <p><a href="#" class="social-media"><i class="fa-brands fa-instagram"
-                            style="color: #ffffff;"></i>@ONG.TotoroPet</a></p>
-                <p><a href="#" class="social-media"><i class="fa-brands fa-twitter"
-                            style="color: #ffffff;"></i>@PetTotoro</a></p>
-                <p><a href="#" class="social-media"><i class="fa-brands fa-whatsapp" style="color: #ffffff;"></i> (11)
-                        98765-4321</a></p>
+                <p><a href="#" class="social-media"><i class="fa-brands fa-facebook" style="color: #ffffff;"></i>TotoroPet ONG</a></p>
+                <p ><a href="#" class="social-media"><i class="fa-brands fa-instagram" style="color: #ffffff;"></i>@ONG.TotoroPet</a></p>
+                <p ><a href="#" class="social-media"><i class="fa-brands fa-twitter" style="color: #ffffff;"></i>@PetTotoro</a></p>
+                <p ><a href="#" class="social-media"><i class="fa-brands fa-whatsapp" style="color: #ffffff;"></i> (11) 98765-4321</a></p>
             </div>
 
             <section class="contact-info">
                 <p><i class="fa-solid fa-phone" style="color: #ffffff;"></i> (11) 98765-4321</p>
-                <p><i class="fa-solid fa-envelope" style="color: #ffffff;"></i><a
-                        href="mailto:contato@totoropet.com.br">contato@totoropet.com.br</a></p>
+                <p><i class="fa-solid fa-envelope" style="color: #ffffff;"></i><a href="mailto:contato@totoropet.com.br">contato@totoropet.com.br</a></p>
             </section>
 
         </section>
         <p class="copyright">&copy; 2024 Totoro Pet. Todos os direitos reservados.</p>
     </footer>
+
     <script src="../JavaScript/script.js" defer></script>
+    <script src="../JavaScript/petPerdido.js" defer></script>
 </body>
 
 </html>
