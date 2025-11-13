@@ -8,13 +8,13 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/doar.css">
 
 </head>
 <body>
-    <header>
+ <header>
 
-        <img class="Logo-principal" src="../images/logo-TotoroPet.png" alt="Logo Totoro Pet">
-        <h1 class="Text-Logo">Totoro Pet</h1>
+        <img class="Logo-principal" src="../images/Logo--TotoroPet.png" alt="Logo Totoro Pet">
 
         <div class="Login-header">
             <a href="Cadastro.html"><div id="login-Access">Entrar/Cadastrar</div></a>
@@ -31,7 +31,121 @@
 
     </nav>
 
+    <main>
+        <section class="container-doar" data-animate>
 
-    <script src="../JavaScript/script.js" defer></script>
+            <div class="doar-cabecalho">
+              <p>Sua contribuição faz a diferença na vida dos nossos amigos de quatro patas.</p>
+            </div>
+          
+            <div class="opcoes-doar">
+
+                <p class="title-doar">Escolha uma forma de doação:</p>
+
+                <div class="doar-opcao">
+
+                    <div class="opc-1" data-animate>
+                        <i class="fa-solid fa-hand-holding-heart fa-2x" ></i>
+                        <p>Doação de itens</p>
+                    </div>
+
+                    <div class="opc-2" data-animate>
+                        <i class="fa-solid fa-sack-dollar fa-2x"></i>
+                        <p>Doação Financeira</p>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+            <div class="doar-itens">
+                <div class="doar-dicas" data-animate>
+                    <h4>Itens que você pode doar:</h4>
+                    <ul>
+                        <li>Ração para cães e gatos</li>
+                        <li>Brinquedos e acessórios</li>
+                        <li>Produtos de higiene (shampoo, escovas, etc.)</li>
+                        <li>Camas e cobertores</li>
+                        <li>Medicamentos veterinários (com validade)</li>
+                    </ul><br>
+                    <p>Entre em contato conosco para agendar a entrega dos itens doados. Sua generosidade ajuda a transformar vidas!</p>
+
+                </div>
+                <div class="container-formItens" data-animate>
+                    <form id="form-itens">
+                        <label for="nomeDoador">Seu nome:</label>
+                        <input type="text" id="nomeDoador" placeholder="Ex: João Silva">
+
+                        <label for="contatoDoador">Seu contato (WhatsApp):</label>
+                        <input type="tel" id="contatoDoador" placeholder="Ex: (85) 12345-6789">
+
+                        <label for="itensDoados">Itens que deseja doar:</label>
+                        <textarea id="itensDoados" placeholder="Descreva os itens que você gostaria de doar..."></textarea>
+
+                        <button id="bnt-itens"type="submit">Enviar</button>
+
+                    </form>
+                </div>
+            </div>
+            <div class="doar-finaceiro">
+
+                <div class="doacao-pix" data-animate>
+
+                    <h4>Faça sua doação via PIX:</h4>
+                    <img src="../images/qrcode.png" alt="Qrcode para transferência PIX">
+
+                    <input type="text" id="chavePix" value="Totoropet2025@gmail.com" readonly>  
+                    <button onclick="copiarTexto()">Copiar chave</button>
+                    <span id="msg-copiado"></span>
+                </div>    
+
+                <div class="doacao-cartao" data-animate>
+                    <h4>Doação via cartão de crédito:</h4>
+                    <form id="form-cartao">
+                        <label for="nomeCartao">Nome no cartão:</label>
+                        <input type="text" id="nomeCartao" placeholder="Ex: Maria Silva">
+
+                        <label for="numeroCartao">Número do cartão:</label>
+                        <input type="text" id="numeroCartao" placeholder="Ex: 1234 5678 9012 3456">
+
+                        <label for="validadeCartao">Validade:</label>
+                        <input type="text" id="validadeCartao" placeholder="MM/AA">
+
+                        <label for="cvvCartao">CVV:</label>
+                        <input type="text" id="cvvCartao" placeholder="Ex: 123">
+
+                        <label for="valorDoacao">Valor da doação (R$):</label>
+                        <input type="number" id="valorDoacao" placeholder="Ex: 50.00">
+
+                        <button type="submit">Doar</button>
+
+                    </form>
+
+                    <span id="mensagem" class="mensagem"></span>
+            </div>
+            
+        </section>
+    </main>
+
+    <footer>
+        <section class="container-footer" data-animate>
+            <div class="Social-Media">
+                <p><a href="#" class="social-media"><i class="fa-brands fa-facebook" style="color: #ffffff;"></i>TotoroPet ONG</a></p>
+                <p ><a href="#" class="social-media"><i class="fa-brands fa-instagram" style="color: #ffffff;"></i>@ONG.TotoroPet</a></p>
+                <p ><a href="#" class="social-media"><i class="fa-brands fa-twitter" style="color: #ffffff;"></i>@PetTotoro</a></p>
+                <p ><a href="#" class="social-media"><i class="fa-brands fa-whatsapp" style="color: #ffffff;"></i> (85) 98765-4321</a></p>
+            </div>
+
+            <section class="contact-info">
+                <p><i class="fa-solid fa-phone" style="color: #ffffff;"></i> (85) 98765-4321</p>
+                <p><i class="fa-solid fa-envelope" style="color: #ffffff;"></i><a href="mailto:contato@totoropet.com.br">Totoropet2025@gmail.com</a></p>
+            </section>
+
+        </section>
+        <p class="copyright">&copy; 2024 Totoro Pet. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="../JavaScript/script.js"></script>
+    <script src="../JavaScript/doar.js"></script>
 </body>
 </html>

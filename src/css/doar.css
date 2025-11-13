@@ -1,0 +1,245 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap');
+
+
+
+
+
+
+.doar-cabecalho p{
+    color: white;
+    padding-top: 15%;
+    font-size: clamp(1rem, 2.5vw, 2.5rem);
+    text-align: center;
+    padding: auto;
+    margin: auto;
+    font-family: "Shadows Into Light Two", cursive;
+    font-weight: bold;
+    filter: drop-shadow(2px 2px 2px rgb(112, 112, 112));
+}
+
+.doar-cabecalho{
+    height: 450px;
+    background-image: 
+    linear-gradient(to bottom, transparent 20%,var(--color7) 100%),
+    url('../images/dog-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+}
+
+.container-doar {
+    background: linear-gradient(to bottom, var(--color12) 65% , #fff 100%);
+    
+}
+
+
+.opcoes-doar{
+    background-color: var(--color7);
+    filter: brightness(0.9);
+    height: 300px;
+    padding: auto;
+}
+
+.opcoes-doar .title-doar{
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    font-size: clamp(1rem, 2.5vw, 2.5rem);
+    color: white;
+    font-family: "Shadows Into Light Two", cursive;
+}
+
+.doar-opcao{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+    margin: auto;
+    gap: 1rem;
+    
+}
+
+.opc-1,
+.opc-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    color: var(--color7);
+    max-width: 15%;
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.5rem;
+    font-size: clamp(0.6rem, 1.2vw, 1.5rem);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.opc-1:hover,
+.opc-2:hover {
+    background-color: var(--color8);
+    color: #fff;
+    transform: scale(1.2);
+    box-shadow: 1px 10px 10px rgba(255, 255, 255, 0.74);
+}
+
+.opc-1 i:hover,
+.opc-2 i:hover {
+    color: #fff;
+}
+
+.doar-finaceiro,
+.doar-itens{
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    margin: auto;
+    padding: auto;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+
+.doacao-pix,
+.doacao-cartao{
+    background-color: #fff;
+    max-width: 30%;
+    border-radius: 30px;
+    padding: 1rem;
+    text-align: center;
+    margin-top: 2rem;
+    font-size: clamp(0.6rem, 1.2vw, 1.5rem);
+    font-family: sans-serif;
+    color: black;
+}
+
+.doacao-pix img{
+    max-width: 200px;
+    margin-top: 1rem;
+}
+
+.doacao-pix input,
+#form-cartao input{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 250px;
+    font-size: 1rem;
+}
+
+.doacao-pix button,
+#form-cartao button,
+#bnt-itens{
+    background-color: var(--color7);
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.doacao-pix button:hover,
+#form-cartao button:hover,
+#bnt-itens:hover{ 
+    background-color: var(--color8);
+    transform: scale(1.2);
+}   
+
+#msg-copiado {
+  font-size: 0.9rem;
+  color: green;
+  margin-left: 5px;
+}
+
+#form-cartao label{
+    color: black;
+    
+    
+}
+
+#form-cartao button{
+    margin-top: 5px;
+
+}
+
+.mensagem {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.mensagem.sucesso {
+  color: green;
+}
+
+.mensagem.erro {
+  color: red;
+}
+
+input.erro {
+  border: 1px solid red;
+}
+
+/*.doar-dicas{
+    background-color: #fff;
+    max-width: 30%;
+    border-radius: 30px;
+    padding: 2rem;
+    text-align: left;
+    margin-top: 2rem;
+    font-size: clamp(0.6rem, 1.2vw, 1.5rem);
+    font-family: sans-serif;
+    color: black;
+}
+
+#form-itens{
+    background-color: #fff;
+    max-width: 40%;
+    display: flex;
+    border-radius: 30px;
+}
+
+.doar-itens{
+    display: flex;
+   
+}*/
+
+.doar-itens {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin: 3rem auto;
+  width: 90%;
+}
+
+.doar-dicas {
+  flex: 1;
+  min-width: 300px;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.container-formItens {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+#form-itens {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

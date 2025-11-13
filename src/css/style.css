@@ -19,6 +19,7 @@
 --color9: #c4a6d2 ;
 --color10: #929b76 ;
 --color11: #694730 ;
+--color12: #542f70;
 
 }
 
@@ -369,7 +370,6 @@ footer{
     justify-content: center;
     transition: bottom 0.4s;
     border-radius: 15px;
-    /*font-size: 15px;*/
     font-size: clamp(0.6rem, 1.2vw, 1.5rem);
     color: var(--color11);
     text-align: center;
