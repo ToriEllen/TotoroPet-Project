@@ -129,9 +129,9 @@ formulario.addEventListener("submit", function(e) {
     preview.innerHTML = "<small>Clique para adicionar uma foto</small>";
 
     
-    alert(`Pet "${novoPet.nome}" cadastrado com sucesso! Vamos ajudar a encontrar`);
+    alert('Pet "${novoPet.nome}" cadastrado com sucesso! Vamos ajudar a encontrar!');
 
     
-    window.location.href = "perdido.html";  
-   
+    window.location.href = "perdido.html";  
+   
 });
