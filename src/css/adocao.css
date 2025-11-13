@@ -1,49 +1,60 @@
 /*Página de adoção*/
-:root{
+:root {
     --colorOne: #385c16;
-    --colorTwo: #fffaf0; 
+    --colorTwo: #fffaf0;
     --colorThree: #694730;
     --colorFour: #7eb77f;
-    --colorFive:rgb(65, 30, 2);
+    --colorFive: rgb(65, 30, 2);
+    --colorSix: rgb(129, 239, 155);
 }
+
 @import url(style.css);
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-.adocao{
+.adocao {
     padding: 3%;
-    text-align:center;
+    text-align: center;
     font-size: 0.875rem;
     padding-bottom: 2%;
     padding-top: 2%;
     color: var(--colorFive);
-    font-family:'Nunito', cursive;
+    font-family: 'Nunito', cursive;
 }
 
-#adocao-body{
-    display: grid;/*colocar em formato de grade*/
-    grid-template-columns: repeat(auto-fit,minmax(250px, 1fr)); 
-    gap: 0.938rem; /*descolar um post do outro*/
+#adocao-body {
+    display: grid;
+    /*colocar em formato de grade*/
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 0.938rem;
+    /*descolar um post do outro*/
     padding: 5%;
-    justify-items:center; /* colocar tudo central*/
+    justify-items: center;
+    /* colocar tudo central*/
 
 }
-.pet-adocao{
+
+.pet-adocao {
     background-color: var(--colorTwo);
-    border-radius: 15px;/*bordinhas redondas*/
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    /*bordinhas redondas*/
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     padding: 1%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
     /*transform: translateY(-120vh);
     transition: transform 1s ease-out, opacity 0.5s;*/
 }
-.pet-adocao:hover{
+
+.pet-adocao:hover {
     transform: scale(1.03);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
-.pet-adocao img{
-    width: 11.25rem; /*o quanto vai ocupar*/
-    height: 11.25rem;/*altura*/
+
+.pet-adocao img {
+    width: 11.25rem;
+    /*o quanto vai ocupar*/
+    height: 11.25rem;
+    /*altura*/
     border-radius: 0.50rem;
     object-fit: cover;
     display: block;
@@ -51,19 +62,22 @@
     padding-top: 0.10rem;
 
 }
-.info-adocao h2{
+
+.info-adocao h2 {
     color: #3e3e3e;
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
     text-align: center;
     padding-top: 0.400rem;
 }
-.info-adocao p{
+
+.info-adocao p {
     color: #555;
     margin-bottom: 0.625rem;
     text-align: center;
 }
-button{
+
+button {
     background-color: var(--colorFour);
     border: none;
     padding: 10px 20px;
@@ -74,15 +88,16 @@ button{
     display: block;
     margin: auto;
 
-    button bnt-ad{
-        display: inline-block;     
+    button bnt-ad {
+        display: inline-block;
     }
 }
+
 button:hover {
-  background-color: #19581b;
+    background-color: #19581b;
 }
 
-.paginacao-pet button{
+.paginacao-pet button {
     background-color: rgba(152, 81, 23, 0);
     font-size: 0.8rem;
     font-weight: bold;
@@ -119,14 +134,52 @@ button:hover {
     margin: 0.2rem;
 }
 
-.pagination div:not(.numbers), /*os itens que não são os números*/
-.pagination div.numbers div{
+.pagination div:not(.numbers),
+/*os itens que não são os números*/
+.pagination div.numbers div {
     width: 40px;
     height: 40px;
 }
 
-.pagination div.numbers div:hover, /*os que são numeros*/
-.pagination div.numbers div.active{
+.pagination div.numbers div:hover,
+/*os que são numeros*/
+.pagination div.numbers div.active {
     color: var(--colorOne);
     background-color: var(--colorFour);
+}
+
+/*Parte do form de adoção*/
+.form-adocao {
+    display: ;
+    position: absolute;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    
+    z-index: 10; /*para sobrepor tudo*/
+
+    form{
+        background-color:var(--colorSix) ;
+        height: 80%;
+        width: 60%;
+        border-radius: 20px;
+        padding: 2rem;
+        font-family: 'Nunito', cursive;
+
+        label{
+            margin-left: 10%;
+        }
+
+        input{
+            width: 80%;
+            margin-left: 10%;
+            height: 1.4rem;
+            border: none;
+            
+        }
+
+        button{
+            font-family: 'Nunito', cursive;
+        }
+    }
 }

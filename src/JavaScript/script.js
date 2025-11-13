@@ -30,3 +30,29 @@ setInterval (() =>{
 
 }, 4000)
 
+/*Função de responsividade*/
+function menuShow() {
+  let menuMobile = document.querySelector('.navbar-mobile');
+  let menuIcon = document.querySelector('.mobile-menu-icon img');
+  
+  if (menuMobile.classList.contains('open')) {
+      menuMobile.classList.remove('open');
+      document.querySelection('.icon').src = "src/images/Icon/menu_white_36dp.svg";
+    } else {
+      menuMobile.classList.add('open');
+      document.querySelector('.icon').src = "src/images/Icon/close_white_36dp.svg";
+    }
+}
+
+function menuShow1() {
+  let menuMobile1 = document.querySelector('.navbar-mobile');
+  if (menuMobile1.classList.contains('open')) {
+      menuMobile1.classList.remove('open');
+      document.querySelection('.icon').src = "../images/Icon/menu_white_36dp.svg";
+    } else {
+      menuMobile1.classList.add('open');
+      document.querySelector('.icon').src = "../images/Icon/close_white_36dp.svg";
+    }
+}
+
+
