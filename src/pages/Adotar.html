@@ -170,28 +170,30 @@
             <script src="../JavaScript/adotar.js" defer></script>
 
     </main>
+<div id="overlay" class="overlay"></div>
+        <div id="modal-adocao" class="modal-adocao">
+            <div class="modal-conteudo">
 
-        <div class="form-adocao">
-            <div class="modal-form">
-                <form>
-                    
-                    <button type="button" class="close-btn"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                <button type="button" class="close-btn"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
                         viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
                         <path
                         d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
                     </svg></button><br>
                     
+                <form id="form-adot">
+                    
+                    
                     <label for="nome">Seu nome:</label><br>
-                    <input type="text" name="nome" placeholder="Escreva seu nome aqui" required><br><br>
+                    <input type="text" name="nome" id="nome" placeholder="Escreva seu nome aqui" required>
                     
                     <label for="fone">Seu telefone:</label><br>
-                    <input type="tel" name="fone" placeholder="DDD + número" required><br><br>
+                    <input type="tel" name="fone" id="fone" placeholder="DDD + número" required>
                     
-                    <label for="data">Data de retirada:</label><br>
-                    <input type="date" name="data" id="data" required><br><br>
+                    <label for="data">Data de retirada:</label>
+                    <input type="date" name="data" id="data" required>
                     
                     <div>
-                        <label for="pontos">Ponto de retirada:</label><br>
+                        <label for="pontos">Ponto de retirada:</label>
                         <select name="pontos" id="pontos" required>
                             <option value="" disabled selected>Selecione um ponto</option>
                             <option value="Via">Centro Universitário Estácio do Ceará | Via Corpvs</option>
@@ -200,8 +202,10 @@
                         </select>
                     </div>
                     
-                    <br>
+                
                     <button type="submit" class="animado">Confirmar</button>
+
+                    <span id="mensagem3" class="mensagem3"></span>
                 </form>
             </div>
         </div>

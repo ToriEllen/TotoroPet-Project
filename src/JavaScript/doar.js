@@ -50,7 +50,7 @@ function copiarTexto() {
     // limpa os campos
     document.getElementById("form-cartao").reset();
     });
-
+//função validação do formulário de itens doados
     document.getElementById("form-itens").addEventListener("submit", function(e) {
     e.preventDefault(); // impede envio do form
 
