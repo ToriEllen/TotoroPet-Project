@@ -42,7 +42,8 @@
         <span class="menu-hover active"><a href="#"><i class="fa-solid fa-paw"></i>Adotar</a></span>
         <span class="menu-hover"><a href="Doar.html"><i class="fa-solid fa-hand-holding-heart"></i>Doar</a></span>
         <span class="menu-hover"><a href="Apoio.html"><i class="fa-solid fa-location-dot"></i>Pontos de Apoio</a></span>
-        <span class="menu-hover"><a href="Perdido.html"><i class="fa-solid fa-magnifying-glass"></i>Pet perdido</a></span>
+        <span class="menu-hover"><a href="Perdido.html"><i class="fa-solid fa-magnifying-glass"></i>Pet
+                perdido</a></span>
 
     </nav>
 
@@ -166,24 +167,45 @@
                 <div class="last">&#187</div>
             </div>
             <script src="../JavaScript/script.js" defer></script>
+            <script src="../JavaScript/adotar.js" defer></script>
 
     </main>
 
-    <section class="form-adocao">
-        <form>
-            <label for="nome">Seu nome:</label><br>
-            <input type="text" name="nome" required><br>
+        <div class="form-adocao">
+            <div class="modal-form">
+                <form>
+                    
+                    <button type="button" class="close-btn"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                        viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+                        <path
+                        d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                    </svg></button><br>
+                    
+                    <label for="nome">Seu nome:</label><br>
+                    <input type="text" name="nome" placeholder="Escreva seu nome aqui" required><br><br>
+                    
+                    <label for="fone">Seu telefone:</label><br>
+                    <input type="tel" name="fone" placeholder="DDD + número" required><br><br>
+                    
+                    <label for="data">Data de retirada:</label><br>
+                    <input type="date" name="data" id="data" required><br><br>
+                    
+                    <div>
+                        <label for="pontos">Ponto de retirada:</label><br>
+                        <select name="pontos" id="pontos" required>
+                            <option value="" disabled selected>Selecione um ponto</option>
+                            <option value="Via">Centro Universitário Estácio do Ceará | Via Corpvs</option>
+                            <option value="Parangaba">Centro Universitário Estácio | Campus Parangaba</option>
+                            <option value="Centro">Centro Universitário Estácio | Campus Centro</option>
+                        </select>
+                    </div>
+                    
+                    <br>
+                    <button type="submit" class="animado">Confirmar</button>
+                </form>
+            </div>
+        </div>
 
-            <label for="fone">Seu telefone:</label><br>
-            <input type="tel" name="fone" required><br>
-
-            <label for="nome">Nome do animal que deseja adotar:</label><br>
-            <input type="text" name="nome" required>
-
-            <br><br>
-            <button type="submit" class="animado">Confirmar</button>
-        </form>
-    </section>
     <footer>
         <section class="container-footer" data-animate>
             <div class="Social-Media">
