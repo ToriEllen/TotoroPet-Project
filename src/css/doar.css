@@ -14,7 +14,7 @@
     font-size: clamp(1rem, 2.5vw, 2.5rem);
     text-align: center;
     padding: auto;
-    margin: auto;
+    margin: 0 auto;
     font-family: "Shadows Into Light Two", cursive;
     font-weight: bold;
     filter: drop-shadow(2px 2px 2px rgb(112, 112, 112));
@@ -40,11 +40,11 @@
     background-color: var(--color7);
     filter: brightness(0.9);
     height: 300px;
-    padding: auto;
+    padding: 0;
 }
 
 .opcoes-doar .title-doar{
-    margin: auto;
+    margin: 0 auto;
     padding-top: 50px;
     padding-bottom: 50px;
     text-align: center;
@@ -57,7 +57,7 @@
     display: flex;
     justify-content: space-around;
     margin-top: 2rem;
-    margin: auto;
+    margin: 0 auto;
     gap: 1rem;
     
 }
@@ -67,9 +67,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #fff;
-    color: var(--color7);
-    max-width: 15%;
+    background-color: #fff !important;
+    color: var(--color7)!important;
+    max-width: 100%;
     padding: 0.8rem 1.2rem;
     border-radius: 0.5rem;
     font-size: clamp(0.6rem, 1.2vw, 1.5rem);
@@ -79,32 +79,34 @@
 
 .opc-1:hover,
 .opc-2:hover {
-    background-color: var(--color8);
-    color: #fff;
+    background-color: var(--color8)!important;
+    color: #fff!important;
     transform: scale(1.2);
     box-shadow: 1px 10px 10px rgba(255, 255, 255, 0.74);
 }
 
 .opc-1 i:hover,
 .opc-2 i:hover {
-    color: #fff;
+    color: #fff!important;
 }
 
 .doar-finaceiro,
 .doar-itens{
     display: flex;
     justify-content: center;
-    gap: 10%;
-    margin: auto;
-    padding: auto;
-    margin-top: 2rem;
-    margin-bottom: 4rem;
+    align-items: flex-start;
+    gap: 10rem;
+    flex-wrap: wrap;
+    margin: 3rem auto;
+    width: 90%;
+    padding: 0;
+
 }
 
 .doacao-pix,
 .doacao-cartao{
     background-color: #fff;
-    max-width: 30%;
+    max-width: 70%;
     border-radius: 30px;
     padding: 1rem;
     text-align: center;
@@ -112,11 +114,15 @@
     font-size: clamp(0.6rem, 1.2vw, 1.5rem);
     font-family: sans-serif;
     color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow:  0 4px 30px rgba(0,0,0,0.08);
 }
 
 .doacao-pix img{
     max-width: 200px;
-    margin-top: 1rem;
+    margin: 10px auto;
 }
 
 .doacao-pix input,
@@ -126,6 +132,8 @@
     border-radius: 6px;
     width: 250px;
     font-size: 1rem;
+    margin: 10px auto;
+    display: block;
 }
 
 .doacao-pix button,
@@ -138,6 +146,8 @@
     border-radius: 6px;
     cursor: pointer;
     transition: 0.3s;
+    max-width: 60%;
+    margin: 0 auto;
 }
 
 .doacao-pix button:hover,
@@ -164,58 +174,26 @@
 
 }
 
-.mensagem {
+.mensagem, .mensagem2 {
   display: block;
   text-align: center;
   margin-top: 10px;
   font-weight: bold;
 }
 
-.mensagem.sucesso {
+.mensagem.sucesso, .mensagem2.sucesso {
   color: green;
 }
 
-.mensagem.erro {
+.mensagem.erro, .mensagem2.erro {
   color: red;
 }
 
 input.erro {
-  border: 1px solid red;
+  border: 1px solid red !important;
 }
 
-/*.doar-dicas{
-    background-color: #fff;
-    max-width: 30%;
-    border-radius: 30px;
-    padding: 2rem;
-    text-align: left;
-    margin-top: 2rem;
-    font-size: clamp(0.6rem, 1.2vw, 1.5rem);
-    font-family: sans-serif;
-    color: black;
-}
 
-#form-itens{
-    background-color: #fff;
-    max-width: 40%;
-    display: flex;
-    border-radius: 30px;
-}
-
-.doar-itens{
-    display: flex;
-   
-}*/
-
-.doar-itens {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 3rem;
-  flex-wrap: wrap;
-  margin: 3rem auto;
-  width: 90%;
-}
 
 .doar-dicas {
   flex: 1;
@@ -242,4 +220,72 @@ input.erro {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+#form-itens textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+#form-itens input{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    font-size: 1rem;
+}
+
+#ajuda-maya{
+    color: var(--color7);
+    padding:  10px 15px;
+    background-color: #fff;
+    max-width: 75%;
+    margin: 10% auto;
+    border-radius: 15px;
+    font-size: 1.3rem;
+    line-height: 1.4;
+    position: relative;
+    z-index: 5;
+    font-family: "Shadows Into Light Two", cursive;
+    font-weight: 600;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    min-height: 60px;
+}
+
+#mudar-ajuda{
+    display: inline-block;
+    color: var(--color3);
+    text-align: center;
+    min-height: 30px;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+#itens,
+#financeiro {
+    scroll-margin-top: 110px;
+}
+
+.opc{
+    background-color: #fff;
+    max-width: 50%;
+    border-radius: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin: 0 auto;
+    color: var(--color7);
+}
+
+.footer-frase{
+    background-color: var(--color4);
+    padding: 10px 0;
+    text-align: center;
+    font-size: clamp(1rem, 2.0vw, 2.5rem);
+    color: #fff;
+    font-family: "Shadows Into Light Two", cursive;
 }

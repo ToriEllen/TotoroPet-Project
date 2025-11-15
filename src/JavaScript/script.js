@@ -9,8 +9,24 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
-  window.addEventListener('scroll', animateOnScroll);
-  animateOnScroll(); // Para animar os elementos  que já estão visíveis quando a pagina carrega
+  function handleScroll() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 5) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  }
+
+
+  window.addEventListener('scroll', function(){
+    animateOnScroll();
+    handleScroll();
+  });
+
+  animateOnScroll();
+  handleScroll();
+   // Para animar os elementos  que já estão visíveis quando a pagina carrega
 });
 
 //function slider, galeria de fotos

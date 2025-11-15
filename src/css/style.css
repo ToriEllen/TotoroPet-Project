@@ -29,6 +29,9 @@
     box-sizing: border-box;
     text-decoration: none;
 }
+html{
+    scroll-behavior: smooth;
+}
 
 .Logo-principal {
     max-height: 90%;
@@ -105,8 +108,13 @@ header {
     height: 50px;
     padding: auto;
     background-attachment: fixed;
+    transition: background-color 0.4s ease, backdrop-filter 0.4s ease;
 }
 
+.navbar.scrolled {
+    backdrop-filter: blur(8px);
+    background: rgba(156, 118, 92, 0.7); /* sua cor com transparência */
+}
 
 .menu-hover {
     padding: 8px;
