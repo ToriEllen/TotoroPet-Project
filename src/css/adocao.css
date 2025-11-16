@@ -242,22 +242,21 @@ button:hover {
     transform: scale(1.05);
 }
 
-.mensagem3 {
-    display: block;
-    text-align: center;
-    margin-top: 10px;
-    font-weight: bold;
-}
 
 .mensagem3.sucesso {
     color: green;
+    text-align: center;
+    margin-top: 10px;
 }   
 .mensagem3.erro {
     color: red;
+    text-align: center;
+    margin-top: 10px;
+    
 }
 
 input.erro {
-    border: 2px solid red!important;
+    border: 1px solid red!important;
 }
 
 /*.form-adocao {
