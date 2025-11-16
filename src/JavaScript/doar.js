@@ -99,20 +99,20 @@ let fraseIndice = 0
 
 function mudarFrase(){
     frase.style.opacity = "0"
-    frase.style.transform = "translateY(100%)"
-    setTimeout(() => {
-        fraseIndice = (fraseIndice + 1) % frases.length
-        frase.textContent = frases[fraseIndice]
+    frase.style.transform = "translateY(100%)"//faz a frase ficar transparente e descer
+    setTimeout(() => {//animação de saida.
+        fraseIndice = (fraseIndice + 1) % frases.length//passa para proxima frase em looping infinito
+        frase.textContent = frases[fraseIndice]//o texto da frase na página é substituído pela próxima frase do array.
 
-        frase.style.transform = "translateY(-100%)"
+        frase.style.transform = "translateY(-100%)"//nova frase aparece vindo de cima, fora da tela.
 
-        setTimeout(() => {
+        setTimeout(() => {//animação de entrada.
             frase.style.opacity = "1"
-            frase.style.transform = "translateY(0)"
+            frase.style.transform = "translateY(0)"//fica parada
         })
-    }, 60);
+    }, 70);//garante o tempo da troca de frases
 }
 
-frase.textContent = frases[0];
+frase.textContent = frases[0];//define a frase inicial comoa primeira do array, posiçao 0
 
 setInterval(mudarFrase, 3500); 

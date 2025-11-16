@@ -52,8 +52,10 @@ const buttons = document.querySelectorAll('.submit-button');
 //mensagens de sucesso no window alert para as duas formas
     if (!camposVazios && button.id === 'btnCadastro') {
       alert('Cadastro realizado com sucesso!');
+      window.location.href = "../../Home.html";//redireciona para a página inicial apos o cadastro
     }else if (!camposVazios && button.id === 'btnLogin') {
       alert('Login realizado com sucesso!');
+      window.location.href = "../../Home.html";//redireciona para a página inicial apos o login
     }
   });
 });
@@ -64,7 +66,7 @@ const toggleSenha = document.querySelectorAll('#toggleSenha');
 
 
 
-//ajeitar o time das trocas de imagens
+//animações de troca de imagens ao digitar a senha e clicar no icone olho
 
 const animacoes = [
   '../images/Animation1.png',
@@ -81,7 +83,7 @@ function trocarImagem(index) {
   });
 };
  
-
+//condicoes para trocar a imagem dependendo do click
 trocarImagem(0);
 
 const senhaInputs = document.querySelectorAll('#senha');
@@ -103,7 +105,7 @@ toggleSenhas.forEach(toggle => {
     /*trocarImagem(2);*/
   });
 });
-
+//trocar entre imagens dependendo da açao no campo de senha
 
   senhaInputs.forEach(input => {
     input.addEventListener("input", () => {

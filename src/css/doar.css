@@ -289,3 +289,8 @@ input.erro {
     color: #fff;
     font-family: "Shadows Into Light Two", cursive;
 }
+
+#link{
+    color: var(--color8)!important;
+    font-size: 20px;
+}

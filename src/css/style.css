@@ -62,7 +62,6 @@ header {
     align-items: center;
     padding: auto;
     color: white;
-    /* font-size: 50px;*/
 }
 
 .Login-header {
@@ -79,7 +78,16 @@ header {
     font-size: 16px;
     text-align: center;
     font-family: "Nunito Sans", sans-serif;
+    transition: 0.3s ease;
 }
+
+.Login-header.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: 0.3s ease;
+}
+
 
 #login-Access {
     margin: 4px;
@@ -113,7 +121,7 @@ header {
 
 .navbar.scrolled {
     backdrop-filter: blur(8px);
-    background: rgba(156, 118, 92, 0.7); /* sua cor com transparência */
+    background: rgba(156, 118, 92, 0.7); /*cor com transparência */
 }
 
 .menu-hover {
@@ -154,8 +162,6 @@ header {
     color: var(--color4);
 }
 
-/*ajeitar isso aqui, active nao ta funcionando*/
-
 
 main {
     background: linear-gradient(to bottom, rgb(255, 255, 255) 60%, var(--color5) 85%, var(--color10) 100%);
@@ -186,128 +192,6 @@ footer {
 
 }
 
-/* CONTAINER DO SLIDER */
-.container-slides {
-    width: 80%;
-    margin: 40px auto;
-    display: flex;
-    justify-content: center;
-}
-
-/* SLIDER */
-.slider {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    border-radius: 15px;
-}
-
-/* ÁREA DOS SLIDES */
-.slides {
-    display: flex;
-    width: 400%; /* 4 slides */
-    height: 420px; /* altura do slider */
-    transition: margin-left 0.7s ease;
-}
-
-.slides input {
-    display: none;
-}
-
-/* CADA SLIDE */
-.slide {
-    width: 25%; /* 100 / 4 slides */
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* imagem preenche tudo */
-}
-
-/* NAVEGAÇÃO MANUAL */
-.manual-navigation {
-    position: absolute;
-    width: 100%;
-    bottom: 15px;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.manual-btn {
-    border: 2px solid #fff;
-    padding: 7px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.manual-btn:hover {
-    background: #fff;
-}
-
-/* MOVIMENTO DO SLIDE */
-#radio1:checked ~ .first {
-    margin-left: 0;
-}
-
-#radio2:checked ~ .first {
-    margin-left: -25%;
-}
-
-#radio3:checked ~ .first {
-    margin-left: -50%;
-}
-
-#radio4:checked ~ .first {
-    margin-left: -75%;
-}
-
-/* AUTO NAVEGAÇÃO */
-.navigation-auto {
-    position: absolute;
-    width: 100%;
-    bottom: -25px;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.navigation-auto div {
-    border: 2px solid #ffffff;
-    padding: 7px;
-    border-radius: 50%;
-    transition: 0.3s;
-}
-
-/* INDICADORES AUTOMÁTICOS */
-#radio1:checked ~ .navigation-auto .auto-btn1,
-#radio2:checked ~ .navigation-auto .auto-btn2,
-#radio3:checked ~ .navigation-auto .auto-btn3,
-#radio4:checked ~ .navigation-auto .auto-btn4 {
-    background-color: #fff;
-}
-
-/* RESPONSIVIDADE */
-@media (max-width: 768px) {
-    .slides {
-        height: 250px;
-    }
-}
-
-@media (max-width: 480px) {
-    .slides {
-        height: 180px;
-    }
-
-    .manual-btn,
-    .navigation-auto div {
-        padding: 5px;
-    }
-}
-
-
 .section-sobre {
 
     padding: 50px 80px;
@@ -336,9 +220,7 @@ footer {
 .section-img {
     position: relative;
     max-width: 240px;
-    min-width: 150px;
-    /*max-height: 240px;
-    min-height: 150px;*/
+    min-width: 130px;
     overflow: hidden;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -367,7 +249,7 @@ footer {
     justify-content: center;
     transition: bottom 0.4s;
     border-radius: 15px;
-    font-size: clamp(0.6rem, 1.2vw, 1.5rem);
+    font-size: clamp(0.5rem, 1.2vw, 1.5rem);
     color: var(--color11);
     text-align: center;
     padding: 15px;
@@ -497,219 +379,101 @@ footer {
     text-align: center;
     color: white;
     font-size: 15px;
-
 }
-
-.mobile-menu-icon {
-    display: none;
-}
-
-.navbar-mobile {
-    display: none;
-}
+/* menu hamburger */
 
 .open {
     display: flex;
+    flex-direction: column;
 }
 
-/* Regras responsivas para telas pequenas: esconder a navbar principal e mostrar versão mobile */
-@media screen and (max-width: 400px) {
+.navbar-mobile {
+    display: none; /* escondido por padrão */
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    background-color: var(--color3);
+    padding: 20px 0;
+    width: 100%;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    z-index: 999;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+/* quando o JS adiciona .open, o menu aparece */
+.navbar-mobile.open {
+    display: flex;
+}
+
+.navbar-mobile a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+/*
+.navbar-mobile a:hover {
+    background-color: white;
+    color: var(--color4);
+}*/
+
+.mobile-menu-icon {
+    display: none; /* só aparece no mobile */
+    position: fixed;
+    right: 20px;
+    top: 5px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+/*.mobile-menu-icon button {
+    background: none;
+    border: none;
+    
+}*/
+
+.icon-hamb {
+    width: 35px;
+    transition: 0.3s ease-in-out;
+   
+}
+
+@media (max-width: 640px) {
+
+    /* esconder menu desktop */
     .navbar {
-        padding: 1.5rem 4 rem;
         display: none;
     }
 
+    /* mostrar botão do menu mobile */
     .mobile-menu-icon {
         display: block;
-        width: 100%;
-        background-color: var(--color4);
-        cursor: pointer;
-        border: none;
-        
-
-        button {
-            background-color: transparent;
-            border: none;
-            display: flex;
-            padding: 1rem;
-        }
-
-        .navbar-mobile {
-            display: none;
-            flex-direction: column;
-            background-color: var(--color4);
-            padding-bottom: 1rem;
-        }
-
-        .menu-hover {
-            padding: 8px;
-            transition: background-color 0.3s, color 0.3s;
-            background-color: transparent;
-            color: #fff;
-            border-radius: 10px;
-            width: 90%;
-            text-align: center;
-            margin: 0.25rem auto;
-        }
+        left: 0;
+        background-color: var(--color3);
+        max-width: 50px;
+        border-radius: 10px;
+        padding: 5px;
+        margin: 5px;
     }
 
-    .menu-hover a {
-        color: #fff;
-        transition: color 0.3s;
-        display: block;
+    /* manter o nav mobile escondido até clicar */
+    .navbar-mobile {
+        display: none;
     }
 
-    .menu-hover:hover,
-    .menu-hover:active {
-        background-color: #fff;
-    }
-
-    .menu-hover:hover a,
-    .menu-hover:active a {
-        color: var(--color4);
-    }
-
-    .menu-hover:hover i,
-    .menu-hover:active i {
-        color: var(--color4);
-    }
-
-    .menu-hover.active {
-        background-color: #fff;
-    }
-
-    .menu-hover.active a,
-    .menu-hover.active i {
-        color: var(--color4);
-    }
-}
-
-.menu-hover:hover,
-.menu-hover:active {
-    background-color: #fff;
-}
-
-.menu-hover:hover a,
-.menu-hover:active a {
-    color: var(--color4);
-}
-
-.menu-hover:hover i,
-.menu-hover:active i {
-    color: var(--color4);
-}
-
-.menu-hover.active {
-    background-color: #fff;
-}
-
-.menu-hover.active a,
-.menu-hover.active i {
-    color: var(--color4);
-
-    /* Estilos do formulário e container de pets perdidos */
-    .container-perdidos {
-        max-width: 40%;
-        margin: auto;
-        margin-top: 5%;
-        z-index: 10;
-        padding: 20px;
-        box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.5);
-        border-radius: 18px;
-    }
-
-    .container-perdidos p {
-        text-align: center;
-        margin-bottom: 20px;
-        color: var(--color3);
-        font-family: "Shadows Into Light Two", cursive;
-        font-size: 25px;
-        font-weight: 700;
-    }
-
-    form {
+    /* quando .open for ativado pelo JavaScript */
+    .navbar-mobile.open {
         display: flex;
-        flex-direction: column;
-        align-items: center;
     }
+}
 
-    label {
-        font-size: 15px;
-        color: var(--color4);
-        font-family: "Nunito Sans", sans-serif;
-        font-weight: 700;
-    }
-
-    input[type="text"],
-    input[type="tel"],
-    input[type="file"],
-    textarea {
-        width: 70%;
-        height: 35px;
-        border: 1px solid #ccc;
-        border-radius: 0.5rem;
-        transition: all 0.3s ease;
-        margin: 5px auto;
-    }
-
-    textarea {
-        resize: none;
-        height: 100px;
-    }
-
-    input:focus,
-    textarea:focus {
-        outline: none;
-        border-color: var(--color10);
-        box-shadow: 0 0 5px rgba(75, 159, 225, 0.3);
-    }
-
-    #preview {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #preview img {
-        width: 200px;
-        height: 200px;
-        object-fit: cover;
-        border-radius: 1rem;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        border: 2px solid var(--color10);
-    }
-
-    button[type="submit"],
-    .arquivo {
-        background-color: #184e1da6;
-        color: white;
-        font-weight: bold;
-        border: none;
-        border-radius: 0.5rem;
-        padding: 0.9rem;
-        cursor: pointer;
-        font-size: 1rem;
-        transition: 0.4s ease;
-    }
-
-    button[type="submit"]:hover {
-        background-color: #694730;
-        transform: scale(1.02);
-    }
-
-    @media (max-width: 480px) {
-        main {
-            margin: 1.5rem;
-            padding: 2rem 1.5rem;
-        }
-
-        main h2 {
-            font-size: 1.5rem;
-        }
-
-        #preview img {
-            width: 150px;
-            height: 150px;
-        }
+@media (min-width: 640px){
+        .navbar-mobile.open {
+        display: none;
     }
 }

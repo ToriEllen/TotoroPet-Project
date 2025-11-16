@@ -13,6 +13,10 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/apoio.css">
 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"><!--link para o css do leaflet-->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script><!--link para o js do leaflet-->
+
+
 </head>
 
 <body>
@@ -37,20 +41,17 @@
 
     </nav>
 
-    <div class="mobile-menu-icon">
-        <button onclick="menuShow1()">
-            <img class="icon" src="../images/Icon/menu_white_36dp.svg"></button>
-    </div>
+        <div class="mobile-menu-icon">
+                    <p class="icon"><i class="fa-solid fa-bars fa-2x" style="color: #ffffff;"></i></p>
+        </div>
 
     <nav class="navbar-mobile" data-animate>
         <span class="menu-hover"><a href="../../Home.html"><i class="fa-solid fa-house"></i>Home</a></span>
-        <span class="menu-hover active"><a href="#"><i class="fa-solid fa-paw"></i>Adotar</a></span>
+        <span class="menu-hover"><a href="Adotar.html"><i class="fa-solid fa-paw"></i>Adotar</a></span>
         <span class="menu-hover"><a href="Doar.html"><i class="fa-solid fa-hand-holding-heart"></i>Doar</a></span>
-        <span class="menu-hover"><a href="Apoio.html"><i class="fa-solid fa-location-dot"></i>Pontos de Apoio</a></span>
-        <span class="menu-hover"><a href="Perdido.html"><i class="fa-solid fa-magnifying-glass"></i>Pet
-                perdido</a></span>
-
-    </nav>
+        <span class="menu-hover active"><a href="Apoio.html"><i class="fa-solid fa-location-dot"></i>Pontos de Apoio</a></span>
+        <span class="menu-hover"><a href="Perdido.html"><i class="fa-solid fa-magnifying-glass"></i>Petperdido</a></span>
+  </nav>
 
     <main>
         <section id="apoio-body">
@@ -61,6 +62,7 @@
                 <p>Endereço: Rua Eliseu Uchôa Beco, 600</p>
                 <a class="link-mapa"
                 href="https://maps.app.goo.gl/S16oJX5C7KYfRPJo9" target="_blank">📍Como chegar</a>
+                <div id="mapa1" class="map"></div>
             </article>
 
             <article class="apoio-card">
@@ -69,6 +71,7 @@
                 <p>Endereço: Avenida Senador Fernandes Távora, 137A</p>
                 <a class="link-mapa"
                  href="https://maps.app.goo.gl/Dfss8mVr2TiFDdsm9" target="_blank">📍Como chegar</a>
+                <div id="mapa2" class="map"></div>
             </article>
 
             <article class="apoio-card">
@@ -77,10 +80,17 @@
                 <p>Endereço: Avenida Duque de Caxias, 101</p>
                 <a class="link-mapa"
                 href="https://maps.app.goo.gl/1mA7fY1aZ2LwedPd8" target="_blank">📍Como chegar</a>
-
+                <div id="mapa3" class="map"></div>
             </article>
         </section>
+
+        <div class="entregar-animal">
+            <p>Deseja entregar um animal para adoção? Cadastre-se, ou entre na sua conta <a href="Cadastro.html">clicando aqui</a>. Se preferir fale conosco diretamente
+            pelos nossos canais de atendimento abaixo<i class="fa-solid fa-arrow-down fa-2x" style="color: #ffffff;"></i></p>
+        </div>
     </main>
+
+    
 
     <footer>
         <section class="container-footer" data-animate>
@@ -106,7 +116,8 @@
     </footer>
 
 
-    <script src="../JavaScript/script.js" defer></script>
+    <script src="../JavaScript/script.js" ></script>
+    <script src="../JavaScript/mapa.js" ></script>
 </body>
 
 </html>

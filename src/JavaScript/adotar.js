@@ -1,45 +1,14 @@
-/*const imagens = document.querySelectorAll('.pet-adocao img');
 
-imagens.forEach((img, i) => {
-    setTimeout(() => {
-        img.style.opacity = 1
-        img.style.transform = 'translateY';
-    }, i * 400);
-})*/
-
-/*function populateList(){
-    const data = Array.from({ length: 9})
-    .map((_, i) => `<div class="item">Item ${(i + 1)}</div`)
-
-    const list = document.querySelector('#pagination .list')
-    list.innerHTML = data.join("")
-}
-
-document.getElementById("btnAdotar").addEventListener("click", () => {
-    document.getElementById("modalForm").style.display = "flex";
-});
-
-// Fechar o form
-document.getElementById("closeForm").addEventListener("click", () => {
-    document.getElementById("modalForm").style.display = "none";
-});
-
-// Fechar clicando fora do form
-document.getElementById("modalForm").addEventListener("click", (e) => {
-    if (e.target.id === "modalForm") {
-        document.getElementById("modalForm").style.display = "none";
-    }
-});*/
 
 // Abrir modal
-document.querySelectorAll(".bnt-ad").forEach(botao => {
-    botao.addEventListener("click", () => {//callback
+document.querySelectorAll(".bnt-ad").forEach(botao => {//pega todos os botoes passando por todos com foreach
+    botao.addEventListener("click", () => {//callback, ao clicar
         document.getElementById("overlay").style.display = "block";// Mostrar overlay que começa display none
         document.getElementById("modal-adocao").style.display = "block";// Mostrar modal que começa display none
     });
 });
 
-// Fechar modal
+// Fechar modal, tanto no x, quanto clicando fora, na parte escura
 document.querySelector(".close-btn").addEventListener("click", fecharModal);
 document.getElementById("overlay").addEventListener("click", fecharModal);
 
