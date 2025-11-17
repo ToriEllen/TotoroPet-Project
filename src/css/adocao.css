@@ -32,6 +32,16 @@
     gap: 0.938rem;
     padding: 5%;
     justify-items: center;
+    animation: fadein 1.5s ease-in-out;
+}
+
+@keyframes fadein{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /*cada informação dos card*/
@@ -206,4 +216,11 @@ button:hover {
 
 input.erro {
     border: 1px solid red!important;
+}
+
+.pet-adocao.hide{
+    display: none; /*pra deixar visivel apenas o que eu decidi*/
+}
+.pet-adocao.show{
+    display: block;
 }

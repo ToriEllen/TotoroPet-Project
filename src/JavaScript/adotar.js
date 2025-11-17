@@ -74,3 +74,52 @@ campos.forEach(id => {
     msg.className = "mensagem3 sucesso";
     document.getElementById("form-adot").reset();// Limpa os campos do formulário
 })
+
+const list = document.querySelectorAll(".pet-adocao");
+const prev = document.querySelector(".prev");
+const next = document.querySelector(".next");
+const pageNumber = document.getElementById("page-number");
+
+const maxItem = 8; //quantos cards vai aparecer
+let index = 1; //pagina atual
+
+const totalPages = Math.ceil(list.length / maxItem);
+
+// MOSTRA OS ITENS
+function showItems() {
+    list.forEach(item => { 
+        item.classList.remove("show"); 
+        item.classList.add("hide"); 
+    });
+
+    let start = (index - 1) * maxItem;
+    let end = index * maxItem;
+
+    for (let i = start; i < end && i < list.length; i++) {
+        list[i].classList.remove("hide");
+        list[i].classList.add("show");
+    }
+
+pageNumber.textContent = index;
+}
+
+//próxima página
+next.addEventListener("click", () => {
+    if (index < totalPages) {
+        index++;
+        showItems();
+    }
+});
+
+// página anterior
+prev.addEventListener("click", () => {
+    if (index > 1) {
+        index--;
+        showItems();
+    }
+});
+
+//executa tudo
+window.onload = () => {
+    showItems();
+};
