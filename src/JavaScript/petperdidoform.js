@@ -1,46 +1,70 @@
+
+
 const formulario = document.getElementById("form-pet");
 const nome = document.getElementById("nomeBichinho");
 const tipo = document.getElementById("tipoBichinho");
-const local = document.getElementById("localBichinho");
+const localEncontrado = document.getElementById("localBichinho");
 const contato = document.getElementById("contatoBichinho");
 const obs = document.getElementById("obsBichinho");
 const foto = document.getElementById("seupet");
 const preview = document.getElementById("preview");
 
-// === serve para carregar o rascunho que foi salvo ===
-window.addEventListener("load", () => {
-    const dadosSalvos = JSON.parse(localStorage.getItem("formPet"));
-    if (dadosSalvos) {
-        nome.value = dadosSalvos.nome || "";
-        tipo.value = dadosSalvos.tipo || "";
-        local.value = dadosSalvos.local || "";
-        contato.value = dadosSalvos.contato || "";
-        obs.value = dadosSalvos.obs || "";
-        
-        if (dadosSalvos.fotoBase64) {
-            mostrarPreview(dadosSalvos.fotoBase64);
-        }
+
+/* serve para salvar rascunho */
+function salvarRascunho() {
+    if (!formulario) return;
+
+    const fotoBase64 = preview?.querySelector("img")?.src || "";
+
+    const dados = {
+        nome: nome.value.trim(),
+        tipo: tipo.value.trim(),
+        local: localEncontrado.value.trim(),
+        contato: contato.value.trim(),
+        obs: obs.value.trim(),
+        fotoBase64
+    };
+
+    localStorage.setItem("formPet", JSON.stringify(dados));
+}
+
+
+/* para carregar rascunho */
+function carregarRascunho() {
+    if (!formulario) return;
+
+    const dados = JSON.parse(localStorage.getItem("formPet"));
+    if (!dados) return;
+
+    nome.value = dados.nome || "";
+    tipo.value = dados.tipo || "";
+    localEncontrado.value = dados.local || "";
+    contato.value = dados.contato || "";
+    obs.value = dados.obs || "";
+
+    if (dados.fotoBase64) {
+        mostrarPreview(dados.fotoBase64);
     }
-});
+}
 
 
-[nome, tipo, local, contato, obs].forEach(campo => {
-    campo.addEventListener("input", salvarRascunho);
-});
-
+/* Redimensionar imagem */
 function redimensionarImagem(file, maxWidth, callback) {
     const reader = new FileReader();
-    reader.onload = function(e) {
+    reader.onload = e => {
         const img = new Image();
-        img.onload = function() {
+        img.onload = () => {
             const canvas = document.createElement("canvas");
-            const scaleSize = maxWidth / img.width;
+
+            const scale = maxWidth / img.width;
             canvas.width = maxWidth;
-            canvas.height = img.height * scaleSize;
+            canvas.height = img.height * scale;
+
             const ctx = canvas.getContext("2d");
             ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-            const newBase64 = canvas.toDataURL("image/jpeg", 0.7); 
-            callback(newBase64);
+
+            const base64 = canvas.toDataURL("image/jpeg", 0.7);
+            callback(base64);
         };
         img.src = e.target.result;
     };
@@ -48,90 +72,129 @@ function redimensionarImagem(file, maxWidth, callback) {
 }
 
 
-foto.addEventListener("change", () => {
-    const file = foto.files[0];
-    if (file) {
-        redimensionarImagem(file, 600, (base64) => { 
-            mostrarPreview(base64);
-            salvarRascunho();
-        });
-    }
-});
-
-
-
-function converterParaBase64(file, callback) {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => callback(reader.result);
-    reader.onerror = () => alert("Erro ao ler a imagem. Tente outra foto.");
-}
-
+/* Mostrar imagem */
 function mostrarPreview(src) {
+    if (!preview) return;
+
     preview.innerHTML = "";
+
     const img = document.createElement("img");
     img.src = src;
-    img.style.maxWidth = "200px";
-    img.style.borderRadius = "10px";
-    img.style.marginTop = "10px";
-    img.style.boxShadow = "0 4px 8px rgba(0,0,0,0.2)";
-    img.style.display = "block";
+    img.className = "preview-imagem";
+
+    const botao = document.createElement("button");
+    botao.type = "button";
+    botao.textContent = "Trocar foto";
+    botao.className = "trocar-foto-btn";
+    botao.onclick = () => foto.click();
+
     preview.appendChild(img);
+    preview.appendChild(botao);
+
+    foto.setAttribute("data-has-image", "true");
 }
 
-function salvarRascunho() {
-    const fotoBase64 = preview.querySelector("img")?.src || "";
 
-    const dados = {
-        nome: nome.value,
-        tipo: tipo.value,
-        local: local.value,
-        contato: contato.value,
-        obs: obs.value,
-        fotoBase64: fotoBase64
-    };
-
-    localStorage.setItem("formPet", JSON.stringify(dados));
+/* Escolher nova foto  */
+if (foto) {
+    foto.addEventListener("change", () => {
+        const file = foto.files[0];
+        if (file) {
+            redimensionarImagem(file, 600, base64 => {
+                mostrarPreview(base64);
+                salvarRascunho();
+            });
+        }
+    });
 }
 
-// === envia o formulario ===
-formulario.addEventListener("submit", function(e) {
-    e.preventDefault();
 
-    // serve para validar se todos os campos estão preenchidos
-    if (!nome.value.trim() || !tipo.value.trim() || !local.value.trim() || 
-        !contato.value.trim() || !obs.value.trim() || !preview.querySelector("img")) {
-        
-        alert("Por favor, preencha TODOS os campos e adicione uma foto do pet!");
+/*Salvar rascunho automátic */
+if (formulario) {
+    [nome, tipo, localEncontrado, contato, obs].forEach(campo => {
+        campo.addEventListener("input", salvarRascunho);
+    });
+}
+
+
+/* envia o formulario */
+if (formulario) {
+    formulario.addEventListener("submit", e => {
+        e.preventDefault();
+
+        if (
+            !nome.value.trim() ||
+            !tipo.value.trim() ||
+            !localEncontrado.value.trim() ||
+            !contato.value.trim() ||
+            !obs.value.trim() ||
+            !preview.querySelector("img")
+        ) {
+            alert("Por favor, preencha TODOS os campos e adicione uma foto!");
+            return;
+        }
+
+        const novoPet = {
+            nome: nome.value.trim(),
+            tipo: tipo.value.trim(),
+            local: localEncontrado.value.trim(),
+            contato: contato.value.trim(),
+            obs: obs.value.trim(),
+            fotoBase64: preview.querySelector("img").src,
+            data: new Date().toLocaleString("pt-BR")
+        };
+
+        const pets = JSON.parse(localStorage.getItem("petsCadastrados")) || [];
+        pets.push(novoPet);
+        localStorage.setItem("petsCadastrados", JSON.stringify(pets));
+
+        localStorage.removeItem("formPet");
+        formulario.reset();
+        preview.innerHTML = "<small>Clique para adicionar uma foto</small>";
+
+        alert(`Pet "${novoPet.nome}" cadastrado com sucesso!`);
+
+        window.location.href = "../pages/Perdido.html";
+    });
+}
+
+
+/* lista os pets na perdido.html */
+function listarPets() {
+    const listaPets = document.getElementById("lista-pets");
+    if (!listaPets) return;
+
+    const pets = JSON.parse(localStorage.getItem("petsCadastrados")) || [];
+
+    if (pets.length === 0) {
+        listaPets.innerHTML = "<p>Nenhum pet perdido foi reportado ainda.</p>";
         return;
     }
 
-    const fotoBase64 = preview.querySelector("img").src;
+    pets.sort((a, b) => new Date(b.data) - new Date(a.data));
 
-    const novoPet = {
-        nome: nome.value.trim(),
-        tipo: tipo.value.trim(),
-        local: local.value.trim(),
-        contato: contato.value.trim(),
-        obs: obs.value.trim(),
-        fotoBase64: fotoBase64,
-        data: new Date().toLocaleString('pt-BR')
-    };
+    pets.forEach(p => {
+        const card = document.createElement("div");
+        card.classList.add("card-pet");
 
-    // serve para salvar no localStorage
-    let petsSalvos = JSON.parse(localStorage.getItem("petsCadastrados")) || [];
-    petsSalvos.push(novoPet);
-    localStorage.setItem("petsCadastrados", JSON.stringify(petsSalvos));
+        card.innerHTML = `
+            <img src="${p.fotoBase64}">
+            <div class="card-info">
+                <h3>${p.nome}</h3>
+                <p><strong>Tipo:</strong> ${p.tipo}</p>
+                <p><strong>Visto por último:</strong> ${p.local}</p>
+                <p><strong>Contato:</strong> <span>${p.contato}</span></p>
+                ${p.obs ? `<p><strong>Obs:</strong> ${p.obs}</p>` : ""}
+                <p class="data">Reportado em: ${p.data}</p>
+            </div>
+        `;
 
-    
-    localStorage.removeItem("formPet");
-    formulario.reset();
-    preview.innerHTML = "<small>Clique para adicionar uma foto</small>";
+        listaPets.appendChild(card);
+    });
+}
 
-    
-    alert('Pet "${novoPet.nome}" cadastrado com sucesso! Vamos ajudar a encontrar!');
 
-    
-    window.location.href = "perdido.html";  
-   
+window.addEventListener("DOMContentLoaded", () => {
+    carregarRascunho();
+    listarPets();
 });
