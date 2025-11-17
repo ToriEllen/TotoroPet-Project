@@ -15,7 +15,7 @@
     --colorSix: rgb(84, 223, 116);
     --colorSeven: rgb(49, 184, 81);
 }
-
+/*Section inteira*/
 .adocao {
     padding: 3%;
     text-align: center;
@@ -25,30 +25,25 @@
     color: var(--colorFive);
     font-family: 'Nunito', cursive;
 }
-
+/*como os cards vão ficar*/
 #adocao-body {
     display: grid;
-    /*colocar em formato de grade*/
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 0.938rem;
-    /*descolar um post do outro*/
     padding: 5%;
     justify-items: center;
-    /* colocar tudo central*/
-
 }
 
+/*cada informação dos card*/
 .pet-adocao {
     background-color: var(--colorTwo);
     border-radius: 15px;
-    /*bordinhas redondas*/
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     padding: 2%;
     width: 95%;
-    /* largura fixa para quadrados */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between; /*distribuição uniforme*/
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
 }
@@ -60,12 +55,9 @@
 
 .pet-adocao img {
     width: 11.25rem;
-    /*o quanto vai ocupar*/
     height: 11.25rem;
-    /*altura*/
     border-radius: 0.50rem;
     object-fit: cover;
-    display: block;
     margin: 0 auto;
     padding-top: 0.10rem;
 
@@ -82,7 +74,6 @@
 .info-adocao p {
     color: #555;
     margin-bottom: 0.625rem;
-    text-align: center;
 }
 
 button {
@@ -93,8 +84,6 @@ button {
     color: white;
     cursor: pointer;
     transition: 0.3s;
-    display: block;
-    margin: auto;
 
     button bnt-ad {
         display: inline-block;
@@ -105,26 +94,8 @@ button:hover {
     background-color: #19581b;
 }
 
-.paginacao-pet button {
-    background-color: rgba(152, 81, 23, 0);
-    font-size: 0.8rem;
-    font-weight: bold;
-    color: var(--colorFive);
-    align-items: center;
-
-}
-
-/*.paginacao-pet {
-    padding-bottom: 20px;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.5rem;
-}*/
-
 .pagination {
     display: flex;
-    align-items: center;
     justify-content: center;
     margin-top: 12px;
     gap: 10px;
@@ -142,32 +113,11 @@ button:hover {
     margin: 0.2rem;
 }
 
-.pagination div:not(.numbers),
-/*os itens que não são os números*/
-.pagination div.numbers div {
-    width: 40px;
-    height: 40px;
-}
-
 .pagination div.numbers div:hover,
 /*os que são numeros*/
 .pagination div.numbers div.active {
-    color: var(--colorOne);
     background-color: var(--colorFour);
 }
-
-/*
-.modal-form {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 1;
-}*/
-
-/*Parte do form de adoção*/
 
 /* Fundo escurecido */
 .overlay {
@@ -210,7 +160,6 @@ button:hover {
     background: #ff5a5a;
     padding: 4px 8px;
     border-radius: 5px;
-    color: white;
     cursor: pointer;
     font-size: 20px;
     border: none;
@@ -226,7 +175,7 @@ button:hover {
     outline-color: var(--colorFour);
     font-family: "Special Elite", system-ui;
 }
-
+/*botão de enviar*/
 .modal-conteudo button[type="submit"] {
     width: 100%;
     padding: 12px;
@@ -258,78 +207,3 @@ button:hover {
 input.erro {
     border: 1px solid red!important;
 }
-
-/*.form-adocao {
-    position: absolute;
-    width: 70%;
-    align-items: center;
-    z-index: 1000;
-    overflow: hidden;
-}
-    form {
-        background-color: #A288FF;
-        width: 50%;
-        border-radius: 20px;
-        padding: 2rem;
-        font-family: 'Nunito', cursive;
-        position: relative;
-    }
-        .close-btn {
-            position: absolute;
-            right: 18px;
-            top: 18px;
-            background: #ff5a5a;
-            padding: 3px 6px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: 0.1s;
-        }
-
-        label {
-            margin-left: 10%;
-        }
-
-        input {
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-            width: 80%;
-            margin-left: 10%;
-            height: 1.4rem;
-            border: none;
-            border-radius: 5px;
-            padding-left: 0.4rem;
-            font-family: "Special Elite", system-ui;
-            justify-content: center;
-            outline-color: var(--colorFour);
-        }
-
-        #pontos {
-            height: 0.8rem;
-            width: 80%;
-            margin-left: 10%;
-            border: none;
-            border-radius: 5px;
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-            outline: none;
-            color: rgb(252, 73, 73);
-            font-family: "Special Elite", system-ui;
-        }
-
-        #data {
-            color: rgb(252, 73, 73);
-            height: 0.8rem;
-            width: 80%;
-            margin-left: 10%;
-            border: none;
-            border-radius: 5px;
-        }
-
-        button {
-            font-family: 'Nunito', cursive;
-        }
-
-        button:hover {
-            transform: scale(1.1);
-        }
-    */
