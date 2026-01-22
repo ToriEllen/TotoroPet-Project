@@ -1,5 +1,5 @@
-//Uso da biblioteca Leaflet, que é uma biblioteca JavaScript de código aberto para criar mapas interativos e compatíveis com dispositivos móveis
-
+//Uso da biblioteca Leaflet, que é uma biblioteca JavaScript de código aberto para criar mapas interativos
+//  e compatíveis com dispositivos móveis
 
 const mapa1 = L.map('mapa1').setView([-3.760106, -38.482476], 15);// Coordenadas do local e zoom
 
@@ -12,7 +12,6 @@ L.marker([-3.760106, -38.482476]).addTo(mapa1)
     .bindPopup('ONG TotoroPet<br>Rua Eliseu Uchôa Beco, 600')
     .openPopup();// Adiciona um marcador com um popup no mapa
 
-
 const mapa2 = L.map('mapa2').setView([-3.761772, -38.574468], 15);// Coordenadas do local e zoom
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -23,8 +22,6 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 L.marker([-3.761772, -38.574468]).addTo(mapa2)
     .bindPopup('ONG TotoroPet<br>Avenida Senador Fernandes Távora, 137A')
     .openPopup();// Adiciona um marcador com um popup no mapa
-
-
 
 const mapa3 = L.map('mapa3').setView([-3.733003, -38.525375], 15);// Coordenadas do local e zoom
 
